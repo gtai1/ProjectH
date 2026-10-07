@@ -1,15 +1,13 @@
-games = [
-  {
-    "date": "",
-    "homeBlackScore": 0,
-    "awayWhiteScore": 0,
-    "players": [
-      {
-        "name": "player 1",
-        "team": "white",
-        "goals": 0,
-        "postGoals": 0
-      }
-    ]
-  }
-]
+{
+  "date": "",
+  "blackHomeScore": 0,
+  "whiteAwayScore": 0,
+  "players": [
+    {
+      "name": "player 1",
+      "team": "white",
+      "goals": 0,
+      "postGoals": 0
+    }
+  ]
+}
