@@ -1,26 +1,28 @@
-{
-  "date": "October 3 2026",
-  "blackHomeScore": 5,
-  "whiteAwayScore": 1,
-  "blackHomePostScore": 2,
-  "whiteAwayPostScore": 1,
-  "players": [
-    {
-      "name": "Gavin",
-      "team": "black",
-      "goals": 2,
-      "postGoals": 0
-    },
-    {
-      "name": "Dumb",
-      "team": "black",
-      "goals": 1,
-      "postGoals": 0
-    },    {
-      "name": "Ryan",
-      "team": "black",
-      "goals": 1,
-      "postGoals": 1
-    }
-  ]
-}
+[
+  {
+    "date": "October 3 2026",
+    "blackHomeScore": 5,
+    "whiteAwayScore": 1,
+    "blackHomePostScore": 2,
+    "whiteAwayPostScore": 1,
+    "players": [
+      {
+        "name": "Gavin",
+        "team": "black",
+        "goals": 2,
+        "postGoals": 0
+      },
+      {
+        "name": "Dumb",
+        "team": "black",
+        "goals": 1,
+        "postGoals": 0
+      },    {
+        "name": "Ryan",
+        "team": "black",
+        "goals": 1,
+        "postGoals": 1
+      }
+    ]
+  }
+]
