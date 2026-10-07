@@ -38,7 +38,7 @@
     import { tallyPlayerGoals } from "./functions.js";
     async function loadGoals() {
       try {
-        const response = await fetch("./data.json");
+        const response = await fetch("./games.json");
 
         if (!response.ok) { throw new Error("Unable to load data.json"); }
       
