@@ -50,7 +50,12 @@
         Object.entries(playerGoals).forEach(([name, stats]) => {
         
         const row = document.createElement("tr");
-        row.innerHTML = <td>${name}</td> <td>${stats.goals}</td> <td>${stats.postGoals}</td> <td><strong>${stats.totalGoals}</strong></td> ;
+        row.innerHTML = `
+                <td>${name}</td>
+                <td>${stats.goals}</td>
+                <td>${stats.postGoals}</td>
+                <td><strong>${stats.totalGoals}</strong></td>
+            `;
         statsBody.appendChild(row);
         
         });
