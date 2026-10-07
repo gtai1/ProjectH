@@ -473,3 +473,43 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ========================= Player Stats ========================= */
+
+.stats-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stats-section h3 {
+    border-bottom: 3px solid #0d1b2a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.stats-table th {
+    background-color: #0d1b2a;
+    color: #fff;
+}
+
+.stats-table th, .stats-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.stats-table tbody tr:hover {
+    background-color: #f4f6f9;
+}
+
+.stats-table td:last-child {
+    color: #e63946;
+}
