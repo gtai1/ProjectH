@@ -416,7 +416,9 @@ nav ul li a:hover {
 
 .player-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    /* if including GIP on player stats page */
+    /* grid-template-columns: repeat(3, 1fr); */
     border-top: 1px solid #ddd;
     padding-top: 15px;
     margin-top: 10px;
