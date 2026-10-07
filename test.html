@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player Goals</title>
+</head>
+
+<body>
+
+  <h1>Player Goals</h1>
+
+  <div id="results"></div>
+
+  <script type="module">
+    import { tallyPlayerGoals } from "./functions.js";
+
+    async function loadGoals() {
+      const response = await fetch("./data.json");
+      const games = await response.json();
+
+      const playerGoals = tallyPlayerGoals(games);
+
+      console.log(playerGoals);
+
+      const results = document.getElementById("results");
+
+      Object.entries(playerGoals).forEach(([name, stats]) => {
+        const player = document.createElement("div");
+
+        player.innerHTML = `
+          <h2>${name}</h2>
+          <p>Goals: ${stats.goals}</p>
+          <p>Post Goals: ${stats.postGoals}</p>
+          <p>Total Goals: ${stats.totalGoals}</p>
+        `;
+
+        results.appendChild(player);
+      });
+    }
+
+    loadGoals();
+  </script>
+
+</body>
+</html>
