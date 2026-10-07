@@ -1,1 +1,26 @@
-
+[
+  {
+    "name": "Angus",
+    "number": 22,
+    "position": "Defense",
+    "image": ""
+  },
+    {
+    "name": "Dom",
+    "number": 14,
+    "position": "Right Wing",
+    "image": ""
+  },
+    {
+    "name": "Gavin",
+    "number": 14,
+    "position": "Left Wing",
+    "image": ""
+  },
+    {
+    "name": "Ryan",
+    "number": 24,
+    "position": "Center",
+    "image": ""
+  }
+]
