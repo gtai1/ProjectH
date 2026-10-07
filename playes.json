@@ -3,24 +3,24 @@
     "name": "Angus",
     "number": 22,
     "position": "Defense",
-    "image": ""
+    "image": "./images/22.jpg"
   },
     {
     "name": "Dom",
     "number": 14,
     "position": "Right Wing",
-    "image": ""
+    "image": "./images/14.jpg"
   },
     {
     "name": "Gavin",
-    "number": 14,
+    "number": 7,
     "position": "Left Wing",
-    "image": ""
+    "image": "./images/7.jpg"
   },
     {
     "name": "Ryan",
     "number": 24,
     "position": "Center",
-    "image": ""
+    "image": "./images/24.jpg"
   }
 ]
