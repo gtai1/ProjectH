@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hockey Hub</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1b2a;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #e63946;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a:hover {
+            color: #e63946;
+            transition: color 0.3s ease;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            height: 60vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Main Layout Content */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* News Section */
+        .news-section h3, .sidebar h3 {
+            border-bottom: 3px solid #0d1b2a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .news-card {
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .news-content {
+            padding: 20px;
+        }
+        .news-content h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .news-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        /* Standings Table Sidebar */
+        .sidebar {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f6f9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d1b2a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">
+            <h1>HOCKEY<span>HUB</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Standings</a></li>
+                <li><a href="#">Schedule</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h2>The Ice is Calling</h2>
+        <p>Your ultimate destination for hockey news, scores, and updates.</p>
+        <a href="#" class="cta-btn">Read Latest News</a>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        
+        <!-- Main News Column -->
+        <main class="news-section">
+            <h3>Latest Headlines</h3>
+            
+            <article class="news-card">
+                <div class="news-content">
+                    <div class="news-date">October 7, 2026</div>
+                    <h4>Championship Game Ends in Dramatic Overtime Thriller</h4>
+                    <p>The underdogs secured the trophy tonight after a grueling three-period battle and an unforgettable top-shelf goal just two minutes into overtime.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-content">
+                    <div class="news-date">October 5, 2026</div>
+                    <h4>Top Draft Picks to Watch This Season</h4>
+                    <p>Experts weigh in on the rising rookies who are expected to make a massive impact on the ice as the new season gets underway.</p>
+                </div>
+            </article>
+        </main>
+
+        <!-- Sidebar (Standings) -->
+        <aside class="sidebar">
+            <h3>Standings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Blizzards</strong></td>
+                        <td>42</td>
+                        <td>12</td>
+                        <td>92</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vipers</strong></td>
+                        <td>38</td>
+                        <td>18</td>
+                        <td>84</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Comets</strong></td>
+                        <td>31</td>
+                        <td>25</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Titans</strong></td>
+                        <td>24</td>
+                        <td>32</td>
+                        <td>56</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Hockey Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
