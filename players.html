@@ -201,71 +201,7 @@
 
 <script type="module">
     async function loadPlayers() {
-    try {
-        // Load both JSON files const [playersResponse, gamesResponse] = await Promise.all([ fetch("./players.json"), fetch("./data.json") ]);
-
-        if (!playersResponse.ok) {
-        throw new Error("Unable to load players.json");
-        }
-
-        if (!gamesResponse.ok) {
-        throw new Error("Unable to load data.json");
-        }
-
-        const players = await playersResponse.json();
-        const games = await gamesResponse.json();
-
-        const playersGrid = document.getElementById("players-grid2");
-
-        // Create a card for each player players.forEach(player => {
-
-        let gamesPlayed = 0;
-        let goals = 0;
-
-        // Find this player's stats across all games games.forEach(game => {
-
-        const gamePlayer = game.players.find(
-        (gamePlayer) => gamePlayer.name === player.name,
-        );
-
-        if (gamePlayer) {
-        gamesPlayed++;
-
-        // Regular goals + post goals goals += gamePlayer.goals + gamePlayer.postGoals;
-        }
-
-        // Create player card const card = document.createElement("article");
-
-        card.classList.add("player-card");
-
-        // Use image if one exists, // otherwise display the player's number const playerImage = player.image ? <img src="${player.image}" alt="${player.name}"> : <span>#${player.number}</span>;
-
-        card.innerHTML = `
-
-    <div class="player-image"> ${player.image} </div>
-
-    <div class="player-info">
-
-    <h4>${player.name}</h4>
-
-    <div class="player-position"> ${player.position} </div>
-
-    <div class="player-stats">
-
-    <div class="stat"> <strong>${gamesPlayed}</strong> <span>GP</span> </div>
-
-    <div class="stat"> <strong>${goals}</strong> <span>G</span> </div>
-
-    </div>
-
-    </div>
-
-    `;
-
-        playersGrid.appendChild(card);
-    } catch (error) {
-        console.error("Error loading players:", error);
-    }
+    
     }
 
     loadPlayers();
