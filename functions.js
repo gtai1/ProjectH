@@ -1,4 +1,4 @@
-function tallyPlayerGoals(games) {
+export function tallyPlayerGoals(games) {
   return games.reduce((totals, game) => {
     game.players.forEach(player => {
       if (!totals[player.name]) {
