@@ -1,0 +1,7 @@
+Result of Game
+Date of Game
+
+Player Pages
+  Goals Scored
+  Games Played
+  W/L/T/+-
