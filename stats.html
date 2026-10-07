@@ -26,35 +26,51 @@
 
     </section>
 
-  <div id="results"></div>
+  <table class="stats-table">
+
+    <thead> <tr> <th>Player</th> <th>Goals</th> <th>Post Goals</th> <th>Total Goals</th> </tr> </thead>
+    
+    <tbody id="stats-body"> <!-- Player stats will be inserted here --> </tbody>
+    
+  </table>
 
   <script type="module">
     import { tallyPlayerGoals } from "./functions.js";
 
     async function loadGoals() {
-      const response = await fetch("./data.json");
-      const games = await response.json();
-
-      const playerGoals = tallyPlayerGoals(games);
-
-      console.log(playerGoals);
-
-      const results = document.getElementById("results");
-
-      Object.entries(playerGoals).forEach(([name, stats]) => {
-        const player = document.createElement("div");
-
-        player.innerHTML = `
-          <h2>${name}</h2>
-          <p>Goals: ${stats.goals}</p>
-          <p>Post Goals: ${stats.postGoals}</p>
-          <p>Total Goals: ${stats.totalGoals}</p>
-        `;
-
-        results.appendChild(player);
-      });
+    
+    try {
+    
+    const response = await fetch("./data.json");
+    
+    if (!response.ok) { throw new Error("Unable to load data.json"); }
+    
+    const games = await response.json();
+    
+    const playerGoals = tallyPlayerGoals(games);
+    
+    console.log(playerGoals);
+    
+    const statsBody = document.getElementById("stats-body");
+    
+    Object.entries(playerGoals).forEach(([name, stats]) => {
+    
+    const row = document.createElement("tr");
+    
+    row.innerHTML = <td>${name}</td> <td>${stats.goals}</td> <td>${stats.postGoals}</td> <td><strong>${stats.totalGoals}</strong></td> ;
+    
+    statsBody.appendChild(row);
+    
+    });
+    
+    } catch (error) {
+    
+    console.error("Error loading player stats:", error);
+    
     }
-
+    
+    }
+    
     loadGoals();
   </script>
 
