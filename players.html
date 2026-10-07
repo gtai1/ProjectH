@@ -34,148 +34,7 @@
 
         <h3>Player Roster</h3>
 
-        <div class="players-grid">
-
-
-            <!-- Player 1 -->
-            <article class="player-card">
-
-                <div class="player-image">
-                    #22
-                </div>
-
-                <div class="player-info">
-
-                    <h4>Angus</h4>
-
-                    <div class="player-position">
-                        Defense
-                    </div>
-
-                    <div class="player-stats">
-
-                        <div class="stat">
-                            <strong>97</strong>
-                            <span>GP</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>42</strong>
-                            <span>G</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- Player 2 -->
-            <article class="player-card">
-
-                <div class="player-image">
-                    #14
-                </div>
-
-                <div class="player-info">
-
-                    <h4>Dom</h4>
-
-                    <div class="player-position">
-                        Right Wing
-                    </div>
-
-                    <div class="player-stats">
-
-                        <div class="stat">
-                            <strong>94</strong>
-                            <span>GP</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>45</strong>
-                            <span>G</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- Player 3 -->
-            <article class="player-card">
-
-                <div class="player-image">
-                    #7
-                </div>
-
-                <div class="player-info">
-
-                    <h4>Gavin</h4>
-
-                    <div class="player-position">
-                        Left Wing
-                    </div>
-
-                    <div class="player-stats">
-
-                        <div class="stat">
-                            <strong>88</strong>
-                            <span>GP</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>34</strong>
-                            <span>G</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- Player 4 -->
-            <article class="player-card">
-
-                <div class="player-image">
-                    #24
-                </div>
-
-                <div class="player-info">
-
-                    <h4>Ryan</h4>
-
-                    <div class="player-position">
-                        Center
-                    </div>
-
-                    <div class="player-stats">
-
-                        <div class="stat">
-                            <strong>91</strong>
-                            <span>GP</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>40</strong>
-                            <span>G</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-        <div id="players-grid2" class="players-grid"> <!-- Player cards will be generated here --> </div>
+        <div id="players-grid" class="players-grid"> <!-- Player cards will be generated here --> </div>
 
     </main>
 
@@ -211,7 +70,7 @@
         const players = await playersResponse.json();
         const games = await gamesResponse.json();
     
-        const playersGrid = document.getElementById("players-grid2");
+        const playersGrid = document.getElementById("players-grid");
     
         // Clear existing generated cards
         playersGrid.innerHTML = "";
@@ -252,7 +111,7 @@
     
                     <div class="player-info">
     
-                        <h4>${player.name}</h4>
+                        <h4>${player.name} # ${player.number}</h4>
     
                         <div class="player-position">
                             ${player.position}
