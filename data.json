@@ -1,6 +1,6 @@
 games = [
   {
-    "date": '',
+    "date": "",
     "homeBlackScore": 0,
     "awayWhiteScore": 0,
     "players": [
