@@ -17,8 +17,8 @@ export async function loadPlayerStats() {
         name: player.name,
         gamesPlayed: 0,
         goals: 0,
-        postGoals: 0,
-        totalIncludingPosts: 0,
+        assists: 0,
+        points: 0
       };
     });
 
@@ -31,8 +31,8 @@ export async function loadPlayerStats() {
             name: player.name,
             gamesPlayed: 0,
             goals: 0,
-            postGoals: 0,
-            totalIncludingPosts: 0,
+            assists: 0,
+            points: 0
           };
         }
 
@@ -40,10 +40,10 @@ export async function loadPlayerStats() {
 
         playerStats[player.name].goals += player.goals || 0;
 
-        playerStats[player.name].postGoals += player.postGoals || 0;
+        playerStats[player.name].assists += player.assists || 0;
 
-        playerStats[player.name].totalIncludingPosts =
-          playerStats[player.name].goals + playerStats[player.name].postGoals;
+        playerStats[player.name].points =
+          playerStats[player.name].goals + playerStats[player.name].assists;
       });
     });
 
@@ -54,18 +54,15 @@ export async function loadPlayerStats() {
 
     // Convert stats object to an array and sort
     const sortedPlayers = Object.values(playerStats).sort((a, b) => {
-      // 1. Total including posts
-      if (b.totalIncludingPosts !== a.totalIncludingPosts) {
-        return b.totalIncludingPosts - a.totalIncludingPosts;
+      // 1. Total points
+      if (b.points !== a.points) {
+        return b.points - a.points;
       }
 
       // 2. Regular goals
       if (b.goals !== a.goals) {
         return b.goals - a.goals;
       }
-
-      // 3. Post goals
-      return b.postGoals - a.postGoals;
     });
 
     // Create a row for every player
@@ -75,7 +72,9 @@ export async function loadPlayerStats() {
       row.innerHTML = `
                     <td><strong>${player.name}</strong></td>
                     <td>${player.gamesPlayed}</td>
-                    <td>${player.totalIncludingPosts}</td>
+                    <td>${player.goals}</td>
+                    <td>${player.assists}</td>
+                    <td>${player.points}</td>
                 `;
 
       tableBody.appendChild(row);
@@ -121,16 +120,12 @@ export async function loadGameNews() {
 
       // Get players who scored regular goals or post goals
       const scorers = game.players.filter(
-        (player) => player.goals > 0 || player.postGoals > 0,
+        (player) => player.goals > 0,
       );
 
       // Format a player
       const formatPlayer = (player) => {
         let text = `${player.name} ${player.goals}G`;
-
-        if (player.postGoals > 0) {
-          text += ` (${player.postGoals}PG)`;
-        }
 
         return text;
       };
@@ -142,7 +137,7 @@ export async function loadGameNews() {
         .join(", ");
 
       // Get Whitie scorers
-      const whitieScorers = scorers
+      const whiteScorers = scorers
         .filter((player) => player.team[0].toUpperCase() === "W")
         .map(formatPlayer)
         .join(", ");
@@ -150,7 +145,7 @@ export async function loadGameNews() {
       // Build player goals text
       const playerGoals = [
         blackScorers ? `Black: ${blackScorers}` : "",
-        whitieScorers ? `White: ${whitieScorers}` : "",
+        whiteScorers ? `White: ${whiteScorers}` : "",
       ]
         .filter(Boolean)
         .join("<br>");

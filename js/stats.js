@@ -26,8 +26,8 @@ export async function loadGoals(id) {
         goalsAgainst: 0,
         plusMinus: 0,
         goals: 0,
-        postGoals: 0,
-        totalGoals: 0,
+        assists: 0,
+        points: 0,
       };
     });
 
@@ -74,10 +74,12 @@ export async function loadGoals(id) {
 
         // Individual goals
         stats.goals += player.goals || 0;
-        stats.postGoals += player.postGoals || 0;
 
-        // Total goals including post goals
-        stats.totalGoals = stats.goals + stats.postGoals;
+        // Assists
+        stats.assists += stats.assists || 0;
+
+        // Points
+        stats.points += stats.points || 0;
       });
     });
 
@@ -91,15 +93,13 @@ export async function loadGoals(id) {
     // 2. Regular goals
     // 3. Post goals
     const sortedPlayers = Object.values(playerStats).sort((a, b) => {
-      if (b.totalGoals !== a.totalGoals) {
-        return b.totalGoals - a.totalGoals;
+      if (b.points !== a.points) {
+        return b.points - a.points;
       }
 
       if (b.goals !== a.goals) {
         return b.goals - a.goals;
       }
-
-      return b.postGoals - a.postGoals;
     });
 
     // Create a row for every player
@@ -115,7 +115,9 @@ export async function loadGoals(id) {
         <td>${player.goalsFor}</td>
         <td>${player.goalsAgainst}</td>
         <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
-        <td>${player.totalGoals} (${player.postGoals} Post Goals)</td>
+        <td>${player.goals}</td>
+        <td>${player.assists}</td>
+        <td>${player.points}</td>
       `;
 
       statsBody.appendChild(row);
