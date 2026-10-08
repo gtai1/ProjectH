@@ -53,6 +53,8 @@ export async function loadScores() {
             </div>
           </div>
 
+          <div class="game-note">${game.note}</div>
+
           <div class="dropdown-arrow">▼</div>
         </div>
 
