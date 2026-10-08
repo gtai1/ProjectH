@@ -9,13 +9,45 @@
       {
         "name": "Dom",
         "team": "black",
-        "goals": 38,
+        "goals": 0,
+        "postGoals": 0
+      }
+    ]
+  },
+
+  {
+    "date": "",
+    "blackHomeScore": 4,
+    "whiteAwayScore": 3,
+    "blackHomePostScore": 0,
+    "whiteAwayPostScore": 0,
+    "players": [
+      {
+        "name": "Dom",
+        "team": "black",
+        "goals": 0,
+        "postGoals": 0
+      }
+    ]
+  },
+
+  {
+    "date": "",
+    "blackHomeScore": 5,
+    "whiteAwayScore": 2,
+    "blackHomePostScore": 0,
+    "whiteAwayPostScore": 0,
+    "players": [
+      {
+        "name": "Dom",
+        "team": "black",
+        "goals": 0,
         "postGoals": 0
       }, 
       {
         "name": "Gavin",
         "team": "black",
-        "goals": 23,
+        "goals": 0,
         "postGoals": 0
       }
     ]
