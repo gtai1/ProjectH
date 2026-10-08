@@ -116,9 +116,14 @@ export async function loadGoals(id) {
         <td>${player.goalsAgainst}</td>
         <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
         <td>${player.goals}</td>
-        <td>${player.assists}</td>
-        <td>${player.points}</td>
       `;
+
+      if (id == "stats-body") {
+        row.innerHTML += '
+          <td>${player.assists}</td>
+          <td>${player.points}</td>
+        ';
+      }
 
       statsBody.appendChild(row);
     });
