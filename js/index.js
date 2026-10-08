@@ -122,7 +122,7 @@ export async function loadGameNews() {
       const playerGoals = game.players
         .filter((player) => player.goals > 0 || player.postGoals > 0)
         .map((player) => {
-          let text = `${player.name} ${player.goals} Goal`;
+          let text = `${player.name}(${player.team[0].toUpperCase()}) ${player.goals} G`;
 
           if (player.goals !== 1) {
             text += "s";
