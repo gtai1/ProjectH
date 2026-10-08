@@ -1,1 +1,5 @@
 Legacy Stats
+Add Assists
+Remove Post Goals
+Remove Goals
+Use Total Goals
