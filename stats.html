@@ -34,40 +34,6 @@
     
   </table>
 
-  <script type="module">
-    import { tallyPlayerGoals } from "./functions.js";
-    async function loadGoals() {
-      try {
-        const response = await fetch("./games.json");
-
-        if (!response.ok) { throw new Error("Unable to load data.json"); }
-      
-        const games = await response.json();
-        const playerGoals = tallyPlayerGoals(games);
-        console.log(playerGoals);
-        const statsBody = document.getElementById("stats-body");
-        
-        Object.entries(playerGoals).forEach(([name, stats]) => {
-        
-        const row = document.createElement("tr");
-        row.innerHTML = `
-                <td>${name}</td>
-                <td>${stats.goals}</td>
-                <td>${stats.postGoals}</td>
-                <td><strong>${stats.totalGoals}</strong></td>
-            `;
-        statsBody.appendChild(row);
-        
-        });
-        
-      } catch (error) {
-        console.error("Error loading player stats:", error);
-      }
-    }
-    
-    loadGoals();
-  </script>
-
 <div id="footer"></div>
     
 </body>
@@ -87,5 +53,7 @@
             document.getElementById("footer").innerHTML = data;
         });
 </script>
+
+<script type="module" src="./js/main.js"></script>
 
 </html>
