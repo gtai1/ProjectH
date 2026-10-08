@@ -84,3 +84,88 @@ export async function loadPlayerStats() {
     console.error("Error loading player stats:", error);
   }
 }
+
+export async function loadGameNews() {
+  try {
+    const response = await fetch("./data/games.json");
+
+    if (!response.ok) {
+      throw new Error("Unable to load games.json");
+    }
+
+    const games = await response.json();
+
+    const newsContainer = document.getElementById("news-container");
+
+    // Clear existing cards
+    newsContainer.innerHTML = "";
+
+    // Sort games from newest to oldest
+    // and take only the most recent 2
+    const recentGames = games
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 2);
+
+    // Create a news card for each recent game
+    recentGames.forEach((game) => {
+      // Format ISO date for display
+      const gameDate = new Date(game.date + "T00:00:00");
+
+      const formattedDate = gameDate.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+
+      const score = `Black ${game.blackHomeScore} White ${game.whiteAwayScore}`;
+
+      const playerGoals = game.players
+        .filter((player) => player.goals > 0 || player.postGoals > 0)
+        .map((player) => {
+          let text = `${player.name} ${player.goals} Goal`;
+
+          if (player.goals !== 1) {
+            text += "s";
+          }
+
+          if (player.postGoals > 0) {
+            text += ` (${player.postGoals} post goal`;
+
+            if (player.postGoals !== 1) {
+              text += "s";
+            }
+
+            text += ")";
+          }
+
+          return text;
+        })
+        .join(", ");
+
+      const newsCard = document.createElement("article");
+      newsCard.classList.add("news-card");
+
+      newsCard.innerHTML = `
+        <div class="news-content">
+
+          <div class="news-date">
+            ${formattedDate}
+          </div>
+
+          <h4>
+            ${score}
+          </h4>
+
+          <p>
+            ${playerGoals}
+          </p>
+
+        </div>
+      `;
+
+      newsContainer.appendChild(newsCard);
+    });
+  } catch (error) {
+    console.error("Error loading game news:", error);
+  }
+}
