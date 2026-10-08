@@ -593,9 +593,6 @@ footer {
     margin-bottom: 0;
 }
 
-That will give you cleaner spacing between the score and the note.
-
-
 .score {
   display: flex;
   align-items: center;
