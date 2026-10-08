@@ -540,18 +540,11 @@ footer {
   margin-bottom: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  max-width: 100%;
+  width: min(500px, 100%);
   box-sizing: border-box;
 
   /* Makes it obvious the card is clickable */
   cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .score-card {
-    width: 100%;
-  }
 }
 
 .score-card:hover {
