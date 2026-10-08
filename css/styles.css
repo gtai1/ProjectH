@@ -509,6 +509,8 @@ footer {
 .table-scroll {
     overflow-x: auto;
     width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .stats-table {
