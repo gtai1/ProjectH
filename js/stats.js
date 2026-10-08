@@ -1,8 +1,8 @@
-export async function loadGoals() {
+export async function loadGoals(id) {
   try {
     const [playersResponse, gamesResponse] = await Promise.all([
-      fetch("../data/players.json"),
-      fetch("../data/games.json"),
+      fetch(id == "stats-body" ? "../data/players.json" : "../data/playersLegacy.json"),
+      fetch(id == "stats-body" ? "../data/games.json" :"../data/gamesLegacy.json"),
     ]);
 
     if (!playersResponse.ok || !gamesResponse.ok) {
@@ -81,7 +81,7 @@ export async function loadGoals() {
       });
     });
 
-    const statsBody = document.getElementById("stats-body");
+    const statsBody = document.getElementById(id);
 
     // Clear existing rows
     statsBody.innerHTML = "";
