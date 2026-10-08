@@ -504,6 +504,7 @@ footer {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    margin-bottom: 30px;
 }
 
 .stats-table th {
