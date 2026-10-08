@@ -22,6 +22,11 @@ if (document.getElementById("stats-body")) {
 }
 
 // legacy/index.html
-if (document.getElementById("stats-body-legacy")) {
-    loadGoals("stats-body-legacy");
+if (document.getElementById("stats-body-legacy-2026")) {
+    loadGoals("stats-body-legacy-2026");
+}
+
+// legacy/index.html
+if (document.getElementById("stats-body-legacy-2025")) {
+    loadGoals("stats-body-legacy-2025");
 }
