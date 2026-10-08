@@ -542,7 +542,7 @@ footer {
     flex: 1;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1060px) {
     .scores-container {
         padding: 15px;
     }
