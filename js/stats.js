@@ -1,6 +1,6 @@
 export async function loadGoals() {
   try {
-    const response = await fetch("./games.json");
+    const response = await fetch("./js/games.json");
 
     if (!response.ok) {
       throw new Error("Unable to load data.json");
