@@ -1,5 +1,6 @@
+import { loadPlayerStats } from "./index.js";
 import { loadPlayers } from "./players.js";
-import { loadPlayerStats, loadGoals } from "./stats.js";
+import { loadGoals } from "./stats.js";
 
 if (document.getElementById("players-grid")) {
     loadPlayers();
