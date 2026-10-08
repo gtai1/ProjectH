@@ -529,3 +529,100 @@ footer {
 .stats-table tbody tr:hover {
     background-color: #f4f6f9;
 }
+
+/* =========================
+    Scores
+========================== */
+
+.score-card {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-header {
+  padding: 20px;
+}
+
+.game-date {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.team-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.team-score {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.vs {
+  font-size: 24px;
+  color: #777;
+}
+
+.dropdown-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #f0f0f0;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.dropdown-button:hover {
+  background: #e5e5e5;
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+.players-dropdown {
+  display: none;
+  border-top: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.players-dropdown.open {
+  display: block;
+}
+
+.player-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.player-row:last-child {
+  border-bottom: none;
+}
+
+.player-name {
+  font-weight: 500;
+}
