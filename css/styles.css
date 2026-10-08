@@ -540,8 +540,8 @@ footer {
   margin-bottom: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 350;
-  width: 500;
+  min-width: 350px;
+  width: 500px;
 
   /* Makes it obvious the card is clickable */
   cursor: pointer;
