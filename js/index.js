@@ -1,4 +1,4 @@
-async function loadPlayerStats() {
+export async function loadPlayerStats() {
   try {
     // Load both JSON files
     const [playersResponse, gamesResponse] = await Promise.all([
