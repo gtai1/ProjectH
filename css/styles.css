@@ -537,6 +537,12 @@ footer {
     flex: 1;
 }
 
+@media (max-width: 500px) {
+    .scores-container {
+        padding: 0;
+    }
+}
+
 .scores-container h3 {
     border-bottom: 3px solid #0d1b2a;
     padding-bottom: 10px;
