@@ -557,7 +557,8 @@ footer {
   padding: 20px;
 }
 
-.game-date {
+.game-date,
+.game-note {
   text-align: center;
   color: #666;
   font-size: 14px;
