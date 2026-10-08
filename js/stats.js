@@ -119,10 +119,10 @@ export async function loadGoals(id) {
       `;
 
       if (id == "stats-body") {
-        row.innerHTML += '
+        row.innerHTML += `
           <td>${player.assists}</td>
           <td>${player.points}</td>
-        ';
+        `;
       }
 
       statsBody.appendChild(row);
