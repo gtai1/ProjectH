@@ -125,7 +125,7 @@ export async function loadGameNews() {
 
       // Format a player
       const formatPlayer = (player) => {
-        let text = `${player.name} ${player.goals}G ${player.assists}A ${player.points}P`;
+        let text = `${player.name} ${player.goals}G ${player.assists}A ${player.goals + player.assists}P`;
 
         return text;
       };
