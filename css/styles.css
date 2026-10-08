@@ -538,12 +538,20 @@ footer {
     Scores
 ========================== */
 
-.scores-container {
+/* .scores-container {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
     flex: 1;
     box-sizing: border-box;
+} */
+
+.scores-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
 }
 
 @media (max-width: 1060px) {
@@ -556,6 +564,10 @@ footer {
     border-bottom: 3px solid #0d1b2a;
     padding-bottom: 10px;
     margin-bottom: 25px;
+}
+
+#scores-data {
+    wdth: 100%;
 }
 
 .score-card {
