@@ -506,8 +506,6 @@ footer {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
 }
 
 .stats-table th {
