@@ -18,10 +18,10 @@ if (document.getElementById("players-grid")) {
 
 // stats/index.html
 if (document.getElementById("stats-body")) {
-    loadGoals();
+    loadGoals("stats-body");
 }
 
 // legacy/index.html
 if (document.getElementById("stats-body-legacy")) {
-    loadGoals();
+    loadGoals("stats-body-legacy");
 }
