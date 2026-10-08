@@ -1,1 +1,75 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Hockey Hub - Stats</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Header & Navigation
+    ========================== -->
+    <div id="navbar"></div>
+
+
+    <!-- =========================
+         Page Header
+    ========================== -->
+    <section class="page-header">
+
+        <h2>Legacy Stats</h2>
+
+    </section>
+
+  <table class="stats-table">
+
+    <thead>
+        <tr>
+            <th>Player</th>
+            <th>GP</th>
+            <th>W</th>
+            <th>L</th>
+            <th>T</th>
+            <th>GF</th>
+            <th>GA</th>
+            <th>+/-</th>
+            <th>G</th>
+        </tr>
+    </thead>
+
+    <tbody id="stats-body">
+        <!-- Player stats will be inserted here -->
+    </tbody>
+    
+  </table>
+
+<div id="footer"></div>
+    
+</body>
+
+<script>
+    fetch("../components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+</script>
+
+<script>
+    fetch("../components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+</script>
+
+<script type="module" src="../js/main.js"></script>
+
+</html>
