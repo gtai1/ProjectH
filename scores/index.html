@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Hockey Hub - Scores</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Header & Navigation
+    ========================== -->
+    <div id="navbar"></div>
+
+
+    <!-- =========================
+         Page Header
+    ========================== -->
+    <section class="page-header">
+
+        <h2>Scores</h2>
+
+    </section>
+
+    <main class="players-container">
+
+        <h3>Scores</h3>
+
+        <p>PAGE - WIP</p>
+
+    </main>
+
+    <div id="footer"></div>
+
+</body>
+    
+<script>
+    fetch("../components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+</script>
+
+<script>
+    fetch("../components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+</script>
+
+<script type="module" src="../js/main.js"></script>
+    
+</html>
