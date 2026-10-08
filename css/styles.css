@@ -540,7 +540,7 @@ footer {
 
 @media (max-width: 500px) {
     .scores-container {
-        padding: 5px;
+        padding: 15px;
     }
 }
 
