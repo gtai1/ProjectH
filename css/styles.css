@@ -539,7 +539,7 @@ footer {
 
 @media (max-width: 500px) {
     .scores-container {
-        padding: 0;
+        padding: 5px;
     }
 }
 
@@ -552,7 +552,8 @@ footer {
 .score-card {
   background: #fff;
   border-radius: 12px;
-  margin-bottom: 16px;
+  margin: 0 auto 16px auto;
+  /* margin-bottom: 16px; */
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 500px;
@@ -578,11 +579,22 @@ footer {
 
 .game-date,
 .game-note {
-  text-align: center;
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 15px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
 }
+
+.game-date {
+    margin-bottom: 15px;
+}
+
+.game-note {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+That will give you cleaner spacing between the score and the note.
+
 
 .score {
   display: flex;
