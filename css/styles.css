@@ -543,6 +543,7 @@ footer {
     margin: 40px auto;
     padding: 0 20px;
     flex: 1;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1060px) {
@@ -564,18 +565,20 @@ footer {
   /* margin-bottom: 16px; */
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 1060px;
-  box-sizing: border-box;
+  width: 100%;
+  max-width: 1060px
+  /* width: 1060px; */
+  /* box-sizing: border-box; */
 
   /* Makes it obvious the card is clickable */
   cursor: pointer;
 }
 
-@media (max-width: 1060px) {
+/* @media (max-width: 1060px) {
   .score-card {
     width: 100%;
   }
-}
+} */
 
 .score-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
