@@ -342,6 +342,7 @@ nav ul li a:hover {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
+    flex: 1;
 }
 
 .players-container h3 {
