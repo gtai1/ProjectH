@@ -19,10 +19,10 @@ export async function loadScores() {
 
           return `
             <div class="player-row">
-              <span class="player-name">${player.name}</span>
-              <span>${player.goals} G</span>
-              <span>${player.assists} A</span>
-              <span>${points} PTS</span>
+              <span class="player-name">${player.name}(${player.team[0].toUpperCase()})</span>
+              <span>${player.goals}G</span>
+              <span>${player.assists}A</span>
+              <span>${points}P</span>
             </div>
           `;
         })
