@@ -26,7 +26,7 @@ export async function loadGoals() {
   }
 }
 
-export function tallyPlayerGoals(games) {
+function tallyPlayerGoals(games) {
   return games.reduce((totals, game) => {
     game.players.forEach((player) => {
       if (!totals[player.name]) {
