@@ -1,28 +1,22 @@
 [
   {
-    "date": "2026-10-03",
+    "date": "",
     "blackHomeScore": 5,
     "whiteAwayScore": 1,
-    "blackHomePostScore": 2,
-    "whiteAwayPostScore": 1,
+    "blackHomePostScore": 0,
+    "whiteAwayPostScore": 0,
     "players": [
       {
         "name": "Dom",
         "team": "black",
-        "goals": 1,
+        "goals": 38,
         "postGoals": 0
       }, 
       {
         "name": "Gavin",
         "team": "black",
-        "goals": 2,
+        "goals": 23,
         "postGoals": 0
-      },   
-      {
-        "name": "Ryan",
-        "team": "black",
-        "goals": 1,
-        "postGoals": 1
       }
     ]
   }
