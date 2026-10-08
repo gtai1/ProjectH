@@ -31,6 +31,20 @@ export async function loadPlayers() {
         return total + (gamePlayer ? gamePlayer.goals : 0);
       }, 0);
 
+      // Total assists
+      const assists = playerGames.reduce((total, game) => {
+        const gamePlayer = game.players.find((p) => p.name === player.name);
+
+        return total + (gamePlayer ? gamePlayer.assists : 0);
+      }, 0);
+
+      // Total points
+      const points = playerGames.reduce((total, game) => {
+        const gamePlayer = game.players.find((p) => p.name === player.name);
+
+        return total + (gamePlayer ? gamePlayer.points : 0);
+      }, 0);
+
       // Create player card
       const playerCard = document.createElement("article");
       playerCard.classList.add("player-card");
@@ -59,6 +73,16 @@ export async function loadPlayers() {
 
                             <div class="stat">
                                 <strong>${goals}</strong>
+                                <span>G</span>
+                            </div>
+
+                            <div class="stat">
+                                <strong>${assists}</strong>
+                                <span>G</span>
+                            </div>
+
+                            <div class="stat">
+                                <strong>${points}</strong>
                                 <span>G</span>
                             </div>
     
