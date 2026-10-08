@@ -31,14 +31,6 @@ export async function loadPlayers() {
         return total + (gamePlayer ? gamePlayer.goals : 0);
       }, 0);
 
-      const postGoals = playerGames.reduce((total, game) => {
-        const gamePlayer = game.players.find((p) => p.name === player.name);
-
-        return total + (gamePlayer ? gamePlayer.postGoals : 0);
-      }, 0);
-
-      const goalsIncludingPosts = goals + postGoals;
-
       // Create player card
       const playerCard = document.createElement("article");
       playerCard.classList.add("player-card");
@@ -64,16 +56,9 @@ export async function loadPlayers() {
                                 <strong>${gamesPlayed}</strong>
                                 <span>GP</span>
                             </div>
-    
-                            <!--
-                            <div class="stat">
-                                <strong>${goals}</strong>
-                                <span>G</span>
-                            </div>
-                            -->
 
                             <div class="stat">
-                                <strong>${goalsIncludingPosts}</strong>
+                                <strong>${goals}</strong>
                                 <span>G</span>
                             </div>
     
