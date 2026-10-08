@@ -14,15 +14,19 @@ export async function loadScores() {
       scoreCard.classList.add("score-card");
 
       const playersHTML = [...game.players]
+        .map((player) => ({
+          ...player,
+          points: player.goals + player.assists,
+        }))
         .sort((a, b) => {
-          if (b.goals !== a.goals) {
-            return b.goals - a.goals;
+          if (b.points !== a.points) {
+            return b.points - a.points;
           }
 
-          return b.assists - a.assists;
+          return b.goals - a.goals;
         })
         .map((player) => {
-          const points = player.goals + player.assists;
+          const points = player.points;
 
           return `
             <div class="player-row">
