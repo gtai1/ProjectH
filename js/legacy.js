@@ -2,7 +2,7 @@ export async function loadGoalsLegacy() {
   try {
     const [playersResponse, gamesResponse] = await Promise.all([
       fetch("../data/players.json"),
-      fetch("../data/games.json"),
+      fetch("../data/gamesLegacy.json"),
     ]);
 
     if (!playersResponse.ok || !gamesResponse.ok) {
