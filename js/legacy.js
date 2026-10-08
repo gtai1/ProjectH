@@ -1,4 +1,4 @@
-export async function loadGoals() {
+export async function loadGoalsLegacy() {
   try {
     const [playersResponse, gamesResponse] = await Promise.all([
       fetch("../data/players.json"),
