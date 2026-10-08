@@ -1,6 +1,7 @@
 import { loadPlayerStats, loadGameNews } from "./index.js";
 import { loadPlayers } from "./players.js";
 import { loadGoals } from "./stats.js";
+import { loadGoalsLegacy } from "./legacy.js";
 
 // index.html
 if (document.getElementById("news-container")) {
@@ -21,3 +22,7 @@ if (document.getElementById("stats-body")) {
     loadGoals();
 }
 
+// legacy/index.html
+if (document.getElementById("stats-body-legacy")) {
+    loadGoals();
+}
