@@ -39,7 +39,7 @@ export async function loadPlayers() {
       }, 0);
 
       // Total points
-      const points = goals + assists;
+      const points = (goals || 0) + (assists || 0);
 
       // Create player card
       const playerCard = document.createElement("article");
