@@ -540,6 +540,13 @@ footer {
   margin-bottom: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Makes it obvious the card is clickable */
+  cursor: pointer;
+}
+
+.score-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .game-header {
@@ -582,23 +589,11 @@ footer {
   color: #777;
 }
 
-.dropdown-button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background: #f0f0f0;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.dropdown-button:hover {
-  background: #e5e5e5;
-}
-
-.arrow {
-  margin-left: 8px;
+.dropdown-arrow {
+  text-align: center;
+  margin-top: 15px;
+  color: #777;
+  font-size: 12px;
 }
 
 .players-dropdown {
