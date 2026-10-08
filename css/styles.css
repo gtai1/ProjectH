@@ -383,6 +383,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     color: #fff;
     font-size: 3rem;
@@ -392,9 +393,8 @@ nav ul li a:hover {
 .player-image img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    object-fit: cover;
+    display: block;
 }
 
 .player-info {
