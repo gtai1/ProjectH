@@ -39,11 +39,7 @@ export async function loadPlayers() {
       }, 0);
 
       // Total points
-      const points = playerGames.reduce((total, game) => {
-        const gamePlayer = game.players.find((p) => p.name === player.name);
-
-        return total + (gamePlayer ? gamePlayer.points : 0);
-      }, 0);
+      const points = goals + assists;
 
       // Create player card
       const playerCard = document.createElement("article");
