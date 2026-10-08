@@ -13,16 +13,23 @@ export async function loadScores() {
       const scoreCard = document.createElement("div");
       scoreCard.classList.add("score-card");
 
-      const playersHTML = game.players
+      const playersHTML = [...game.players]
+        .sort((a, b) => {
+          if (b.goals !== a.goals) {
+            return b.goals - a.goals;
+          }
+
+          return b.assists - a.assists;
+        })
         .map((player) => {
           const points = player.goals + player.assists;
 
           return `
             <div class="player-row">
               <span class="player-name">${player.name}(${player.team[0].toUpperCase()})</span>
-              <span>${player.goals}G</span>
-              <span>${player.assists}A</span>
-              <span>${points}P</span>
+              <span>${player.goals} G</span>
+              <span>${player.assists} A</span>
+              <span>${points} P</span>
             </div>
           `;
         })
