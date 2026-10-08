@@ -43,9 +43,11 @@ export async function loadPlayers() {
       const playerCard = document.createElement("article");
       playerCard.classList.add("player-card");
 
+      const imagePath = `../images/${player.image}`;
+
       playerCard.innerHTML = `
                     <div class="player-image">
-                        <img src="${player.image}" alt="${player.name} #${player.number}">
+                        <img src="${imagePath}" alt="${player.name} #${player.number}">
                     </div>
     
                     <div class="player-info">
