@@ -115,9 +115,7 @@ export async function loadGoals() {
         <td>${player.goalsFor}</td>
         <td>${player.goalsAgainst}</td>
         <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
-        <td>${player.totalGoals} "(" + ${player.postGoals} + " Post Goals"+ ")"</td>
-        <td>${player.postGoals}</td>
-
+        <td>${player.totalGoals} (${player.postGoals} Post Goals)</td>
       `;
 
       statsBody.appendChild(row);
