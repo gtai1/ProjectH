@@ -25,38 +25,5 @@
         "postGoals": 1
       }
     ]
-  },
-  {
-    "date": "2026-10-01",
-    "blackHomeScore": 10,
-    "whiteAwayScore": 5,
-    "blackHomePostScore": 0,
-    "whiteAwayPostScore": 0,
-    "players": [
-      {
-        "name": "Dom",
-        "team": "black",
-        "goals": 0,
-        "postGoals": 0
-      }, 
-      {
-        "name": "Gavin",
-        "team": "black",
-        "goals": 4,
-        "postGoals": 0
-      },   
-      {
-        "name": "Ryan",
-        "team": "black",
-        "goals": 4,
-        "postGoals": 0
-      },   
-      {
-        "name": "Angus",
-        "team": "black",
-        "goals": 2,
-        "postGoals": 0
-      }
-    ]
   }
 ]
