@@ -2,8 +2,8 @@ export async function loadPlayers() {
   try {
     // Load both JSON files
     const [playersResponse, gamesResponse] = await Promise.all([
-      fetch("js/players.json"),
-      fetch("js/games.json"),
+      fetch("./data/players.json"),
+      fetch("./data/games.json"),
     ]);
 
     const players = await playersResponse.json();
