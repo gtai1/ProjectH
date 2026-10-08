@@ -521,7 +521,3 @@ footer {
 .stats-table tbody tr:hover {
     background-color: #f4f6f9;
 }
-
-.stats-table td:last-child {
-    color: #e63946;
-}
