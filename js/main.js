@@ -24,5 +24,5 @@ if (document.getElementById("stats-body")) {
 
 // legacy/index.html
 if (document.getElementById("stats-body-legacy")) {
-    loadGoals();
+    loadGoalsLegacy();
 }
