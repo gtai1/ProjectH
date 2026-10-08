@@ -78,12 +78,12 @@ export async function loadPlayers() {
 
                             <div class="stat">
                                 <strong>${assists}</strong>
-                                <span>G</span>
+                                <span>A</span>
                             </div>
 
                             <div class="stat">
                                 <strong>${points}</strong>
-                                <span>G</span>
+                                <span>P</span>
                             </div>
     
                         </div>
