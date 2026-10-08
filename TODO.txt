@@ -3,3 +3,4 @@ Add Assists
 Remove Post Goals
 Remove Goals
 Use Total Goals
+Add Points Columns
