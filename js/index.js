@@ -119,28 +119,41 @@ export async function loadGameNews() {
 
       const score = `Black ${game.blackHomeScore} White ${game.whiteAwayScore}`;
 
-      const playerGoals = game.players
-        .filter((player) => player.goals > 0 || player.postGoals > 0)
-        .map((player) => {
-          let text = `${player.name}(${player.team[0].toUpperCase()}) ${player.goals} G`;
+      // Get players who scored regular goals or post goals
+      const scorers = game.players.filter(
+        (player) => player.goals > 0 || player.postGoals > 0,
+      );
 
-          if (player.goals !== 1) {
-            text += "s";
-          }
+      // Format a player
+      const formatPlayer = (player) => {
+        let text = `${player.name} ${player.goals}G`;
 
-          if (player.postGoals > 0) {
-            text += ` (${player.postGoals} post goal`;
+        if (player.postGoals > 0) {
+          text += ` (${player.postGoals}PG)`;
+        }
 
-            if (player.postGoals !== 1) {
-              text += "s";
-            }
+        return text;
+      };
 
-            text += ")";
-          }
-
-          return text;
-        })
+      // Get Black scorers
+      const blackScorers = scorers
+        .filter((player) => player.team[0].toUpperCase() === "B")
+        .map(formatPlayer)
         .join(", ");
+
+      // Get Whitie scorers
+      const whitieScorers = scorers
+        .filter((player) => player.team[0].toUpperCase() === "W")
+        .map(formatPlayer)
+        .join(", ");
+
+      // Build player goals text
+      const playerGoals = [
+        blackScorers ? `Black: ${blackScorers}` : "",
+        whitieScorers ? `White: ${whitieScorers}` : "",
+      ]
+        .filter(Boolean)
+        .join("<br>");
 
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
@@ -169,3 +182,4 @@ export async function loadGameNews() {
     console.error("Error loading game news:", error);
   }
 }
+
