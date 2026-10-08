@@ -13,7 +13,6 @@ export async function loadScores() {
       const scoreCard = document.createElement("div");
       scoreCard.classList.add("score-card");
 
-      // Calculate total points for each player
       const playersHTML = game.players
         .map((player) => {
           const points = player.goals + player.assists;
@@ -47,10 +46,7 @@ export async function loadScores() {
             </div>
           </div>
 
-          <button class="dropdown-button" type="button">
-            Players
-            <span class="arrow">▼</span>
-          </button>
+          <div class="dropdown-arrow">▼</div>
         </div>
 
         <div class="players-dropdown">
@@ -58,18 +54,17 @@ export async function loadScores() {
         </div>
       `;
 
-      // Add click handler for dropdown
-      const dropdownButton = scoreCard.querySelector(".dropdown-button");
-      const playersDropdown = scoreCard.querySelector(".players-dropdown");
-      const arrow = scoreCard.querySelector(".arrow");
+      // Open/close dropdown when the card is clicked
+      scoreCard.addEventListener("click", () => {
+        const playersDropdown = scoreCard.querySelector(".players-dropdown");
 
-      dropdownButton.addEventListener("click", () => {
+        const arrow = scoreCard.querySelector(".dropdown-arrow");
+
         const isOpen = playersDropdown.classList.toggle("open");
 
         arrow.textContent = isOpen ? "▲" : "▼";
       });
 
-      // Add card to page
       scoresData.appendChild(scoreCard);
     });
   } catch (error) {
