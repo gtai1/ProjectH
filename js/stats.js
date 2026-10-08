@@ -2,8 +2,8 @@ export async function loadGoals(id) {
   try {
     const [playersResponse, gamesResponse] = await Promise.all([
       fetch(id == "stats-body" ? "../data/players.json" : "../data/playersLegacy.json"),
-      fetch(id == "stats-body" ? "../data/games.json" :"../data/gamesLegacy2026.json"),
-      fetch(id == "stats-body" ? "../data/games.json" :"../data/gamesLegacy2025.json"),
+      fetch(id == "stats-body-legacy-2026" ? "../data/games.json" :"../data/gamesLegacy2026.json"),
+      fetch(id == "stats-body-legacy-2025" ? "../data/games.json" :"../data/gamesLegacy2025.json"),
     ]);
 
     if (!playersResponse.ok || !gamesResponse.ok) {
