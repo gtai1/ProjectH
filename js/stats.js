@@ -76,10 +76,10 @@ export async function loadGoals(id) {
         stats.goals += player.goals || 0;
 
         // Assists
-        stats.assists += stats.assists || 0;
+        stats.assists += player.assists || 0;
 
         // Points
-        stats.points += stats.goals + stats.assists;
+        stats.points += player.goals + player.assists;
       });
     });
 
