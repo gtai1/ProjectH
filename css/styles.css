@@ -9,6 +9,8 @@
 
 html {
     scroll-behavior: smooth;
+    
+    height: 100%;
 }
 
 body {
@@ -16,6 +18,11 @@ body {
     line-height: 1.6;
     background-color: #f4f6f9;
     color: #333;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 a {
@@ -94,6 +101,8 @@ nav ul li a:hover {
 
     text-align: center;
     padding: 0 20px;
+
+    flex: 1 0 auto;
 }
 
 .hero h2 {
@@ -209,6 +218,11 @@ footer {
 
     padding: 20px;
     margin-top: 40px;
+}
+
+#footer {
+    margin-top: auto;
+    width: 100%;
 }
 
 /* =========================
