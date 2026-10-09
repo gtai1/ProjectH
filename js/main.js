@@ -1,4 +1,4 @@
-import { loadPlayerStats, loadGameNews } from "./index.js";
+import { loadPlayerStats, loadGameNews, calculatePlayerStreaks } from "./index.js";
 import { loadPlayers } from "./players.js";
 import { loadGoals } from "./stats.js";
 import { loadScores } from "./scores.js";
@@ -10,6 +10,10 @@ if (document.getElementById("news-container")) {
 
 if (document.getElementById("player-stats-body")) {
     loadPlayerStats();
+}
+
+if (document.getElementById("news-container")) {
+    calculatePlayerStreaks();
 }
 
 // players/index.html
