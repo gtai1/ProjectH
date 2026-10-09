@@ -439,6 +439,7 @@ footer {
 
 .stats-table {
     width: 100%;
+    min-width: 650px;
     border-collapse: collapse;
     text-align: left;
     margin-bottom: 30px;
@@ -491,7 +492,7 @@ footer {
 }
 
 #scores-data {
-    wdth: 100%;
+    width: 100%;
 }
 
 .score-card {
