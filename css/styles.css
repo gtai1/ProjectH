@@ -472,7 +472,10 @@ nav ul li a:hover {
 
 .table-scroll {
     overflow-x: auto;
+    max-width: 100%;
     width: 100%;
+    display: block;
+    -webkit-overflow-scrolling: touch;
 }
 
 .stats-table {
