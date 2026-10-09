@@ -18,7 +18,7 @@ export async function loadPlayerStats() {
         gamesPlayed: 0,
         goals: 0,
         assists: 0,
-        points: 0
+        points: 0,
       };
     });
 
@@ -32,7 +32,7 @@ export async function loadPlayerStats() {
             gamesPlayed: 0,
             goals: 0,
             assists: 0,
-            points: 0
+            points: 0,
           };
         }
 
@@ -100,10 +100,10 @@ export async function loadGameNews() {
     newsContainer.innerHTML = "";
 
     // Sort games from newest to oldest
-    // and take only the most recent 3
+    // and take only the most recent 2
     const recentGames = games
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 3);
+      .slice(0, 2);
 
     // Create a news card for each recent game
     recentGames.forEach((game) => {
@@ -119,9 +119,7 @@ export async function loadGameNews() {
       const score = `Black ${game.blackHomeScore} White ${game.whiteAwayScore}`;
 
       // Get players who scored regular goals or post goals
-      const scorers = game.players.filter(
-        (player) => player.goals > 0,
-      );
+      const scorers = game.players.filter((player) => player.goals > 0);
 
       // Format a player
       const formatPlayer = (player) => {
@@ -178,3 +176,69 @@ export async function loadGameNews() {
   }
 }
 
+export async function calculatePlayerStreaks() {
+  // Fetch both JSON files
+  const [playersResponse, gamesResponse] = await Promise.all([
+    fetch("./data/players.json"),
+    fetch("./data/games.json"),
+  ]);
+
+  // Convert responses into JavaScript arrays
+  const [players, games] = await Promise.all([
+    playersResponse.json(),
+    gamesResponse.json(),
+  ]);
+
+  // Create an entry for every player
+  const playerStats = players.map((player) => ({
+    name: player.name,
+    goals: 0,
+    gamesPlayed: 0,
+    currentGoalStreak: 0,
+    currentUnluckyStreak: 0,
+    streak: null,
+  }));
+
+  // Process games chronologically (newest to oldest)
+  const sortedGames = [...games].sort(
+    (b, a) => new Date(a.date) - new Date(b.date),
+  );
+
+  // Process each game
+  for (const game of sortedGames) {
+    for (const player of playerStats) {
+      const gameStats = game.players.find((p) => p.name === player.name);
+
+      const goals = gameStats?.goals ?? 0;
+
+      player.gamesPlayed++;
+      player.goals += goals;
+
+      if (goals > 0) {
+        player.currentGoalStreak++;
+        player.currentUnluckyStreak = 0;
+      } else {
+        player.currentUnluckyStreak++;
+        player.currentGoalStreak = 0;
+      }
+    }
+  }
+
+  // Determine each player's current streak
+  for (const player of playerStats) {
+    if (player.currentGoalStreak >= 3) {
+      player.streak = {
+        type: "goal",
+        games: player.currentGoalStreak,
+      };
+    } else if (player.currentUnluckyStreak >= 3) {
+      player.streak = {
+        type: "unlucky",
+        games: player.currentUnluckyStreak,
+      };
+    }
+  }
+
+  console.log(playerStats);
+  return playerStats;
+}
