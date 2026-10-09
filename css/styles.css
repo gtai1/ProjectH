@@ -251,47 +251,6 @@ footer {
 }
 
 /* =========================
-    Header & Navigation
-========================== */
-header {
-    background-color: #0d1b2a;
-    color: #fff;
-    padding: 1rem 2rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: #e63946;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-nav ul li a {
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #e63946;
-}
-
-/* =========================
     Page Header
 ========================== */
 .page-header {
