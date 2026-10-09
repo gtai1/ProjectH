@@ -100,10 +100,10 @@ export async function loadGameNews() {
     newsContainer.innerHTML = "";
 
     // Sort games from newest to oldest
-    // and take only the most recent 2
+    // and take only the most recent 3
     const recentGames = games
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 2);
+      .slice(0, 3);
 
     // Create a news card for each recent game
     recentGames.forEach((game) => {
