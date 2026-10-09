@@ -13,70 +13,62 @@ export async function loadScores() {
       const scoreCard = document.createElement("div");
       scoreCard.classList.add("score-card");
 
-      const playersHTML = [...game.players]
-        .map((player) => ({
-          ...player,
-          points: player.goals + player.assists,
-        }))
-        .sort((a, b) => {
-          if (b.points !== a.points) {
-            return b.points - a.points;
-          }
+      const goals = game.players
+        .filter((player) => player.goals > 0)
+        .map(
+          (player) =>
+            `${player.name} ${player.goals}`,
+        )
+        .join(", ");
 
-          return b.goals - a.goals;
-        })
-        .map((player) => {
-          const points = player.points;
+      const assists = game.players
+        .filter((player) => player.assists > 0)
+        .map(
+          (player) =>
+            `${player.name} ${player.assists}`,
+        )
+        .join(", ");
 
-          return `
-            <div class="player-row">
-              <span class="player-name">${player.name}(${player.team[0].toUpperCase()})</span>
-              <span>${player.goals} G</span>
-              <span>${player.assists} A</span>
-              <span>${points} P</span>
-            </div>
-          `;
-        })
-        .join("");
+      const playerScores = `
+        ${goals ? `
+          <div>
+            <span><b>Goals</b>: ${goals}</span>
+          </div>
+        ` : ""}
+
+        ${assists ? `
+          <div>
+            <span><b>Assists</b>: ${assists}</span>
+          </div>
+        ` : ""}
+      `;
 
       scoreCard.innerHTML = `
         <div class="game-header">
           <div class="game-date">${game.date}</div>
 
           <div class="score">
-            <div class="team">
-              <span class="team-name">Black</span>
-              <span class="team-score">${game.blackHomeScore}</span>
-            </div>
-
-            <span class="vs">-</span>
-
-            <div class="team">
+            <div class="team-away">
               <span class="team-name">White</span>
+              <img src="../icons/white-jersey.svg" alt="WhiteJersey" width="25" hieght="25" />
               <span class="team-score">${game.whiteAwayScore}</span>
             </div>
+
+            <span class="vs">@</span>
+            
+            <div class="team-home">
+              <span class="team-score">${game.blackHomeScore}</span>
+              <img src="../icons/black-jersey.svg" alt="BlackJersey" width="25" hieght="25" />
+              <span class="team-name">Black</span>
+            </div>
+
           </div>
 
+          ${playerScores ? `<div class="goal-scorers">${playerScores}</div>` : ""}
+
           ${game.note ? `<div class="game-note">${game.note}</div>` : ""}
-
-          <div class="dropdown-arrow">▼</div>
-        </div>
-
-        <div class="players-dropdown">
-          ${playersHTML}
         </div>
       `;
-
-      // Open/close dropdown when the card is clicked
-      scoreCard.addEventListener("click", () => {
-        const playersDropdown = scoreCard.querySelector(".players-dropdown");
-
-        const arrow = scoreCard.querySelector(".dropdown-arrow");
-
-        const isOpen = playersDropdown.classList.toggle("open");
-
-        arrow.textContent = isOpen ? "▲" : "▼";
-      });
 
       scoresData.appendChild(scoreCard);
     });

@@ -543,10 +543,10 @@ footer {
 
 .game-date {
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .game-note {
-    margin-top: 15px;
     margin-bottom: 0;
 }
 
@@ -557,11 +557,18 @@ footer {
   gap: 25px;
 }
 
-.team {
+.team-home {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
+}
+
+.team-away {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
 
 .team-name {
@@ -577,37 +584,10 @@ footer {
 .vs {
   font-size: 24px;
   color: #777;
+  font-weight: bold;
 }
 
-.dropdown-arrow {
-  text-align: center;
-  margin-top: 15px;
-  color: #777;
-  font-size: 12px;
-}
-
-.players-dropdown {
-  display: none;
-  border-top: 1px solid #ddd;
-  padding: 10px 20px;
-}
-
-.players-dropdown.open {
-  display: block;
-}
-
-.player-row {
-  display: grid;
-  grid-template-columns: 1fr auto auto auto;
-  gap: 15px;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.player-row:last-child {
-  border-bottom: none;
-}
-
-.player-name {
-  font-weight: 500;
+.goal-scorers {
+    margin-top: 15px;
+    text-align: center;
 }
