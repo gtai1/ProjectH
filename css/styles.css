@@ -581,6 +581,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .game-header {
+        padding: 10px;
+    }
+
+    .game-date {
+        margin-bottom: 5px;
+    }
+    
     .score-card .score-details {
         display: none;
     }
