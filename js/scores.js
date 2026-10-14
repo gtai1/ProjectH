@@ -13,7 +13,7 @@ export async function loadScores() {
       const scoreCard = document.createElement("div");
       scoreCard.classList.add("score-card");
 
-      const goals = game.players
+      const goals = [...game.players]
         .sort((a, b) => b.goals - a.goals)
         .filter((player) => player.goals > 0)
         .map(
@@ -22,7 +22,7 @@ export async function loadScores() {
         )
         .join(", ");
       
-      const assists = game.players
+      const assists = [...game.players]
         .sort((a, b) => b.assists - a.assists)
         .filter((player) => player.assists > 0)
         .map(
@@ -66,12 +66,20 @@ export async function loadScores() {
 
           </div>
 
-          ${playerScores ? `<div class="goal-scorers">${playerScores}</div>` : ""}
+          // ${playerScores ? `<div class="goal-scorers">${playerScores}</div>` : ""}
+
+          ${goals || assists ? `<div class="goal-scorers score-details">${playerScores}</div>` : ""}
 
           ${game.note ? `<div class="game-note">${game.note}</div>` : ""}
         </div>
       `;
 
+      scoreCard.addEventListener("click", () => {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          scoreCard.classList.toggle("expanded");
+        }
+      });
+      
       scoresData.prepend(scoreCard);
     });
   } catch (error) {
