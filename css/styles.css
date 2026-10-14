@@ -600,4 +600,9 @@ footer {
     .score-card.expanded .score-details {
         display: block;
     }
+
+    .goal-scorers {
+        margin-top: 0px;
+        text-align: center;
+    }
 }
