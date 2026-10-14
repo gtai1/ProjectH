@@ -14,14 +14,16 @@ export async function loadScores() {
       scoreCard.classList.add("score-card");
 
       const goals = game.players
+        .sort((a, b) => b.goals - a.goals)
         .filter((player) => player.goals > 0)
         .map(
           (player) =>
             `${player.name} ${player.goals}`,
         )
         .join(", ");
-
+      
       const assists = game.players
+        .sort((a, b) => b.assists - a.assists)
         .filter((player) => player.assists > 0)
         .map(
           (player) =>
