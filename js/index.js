@@ -81,11 +81,11 @@ export async function loadPlayerStats() {
 
       if (currentPlayerStreak.currentGoalStreak >= 3) {
         row.innerHTML = `
-                    <td><img src="./icons/fire.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
+                    <td><strong>${player.name}</strong><img src="./icons/fire.png" alt="fire" width="25" height="25" /></td>
                 `;
       } else if (currentPlayerStreak.currentUnluckyStreak >= 3) {
         row.innerHTML = `
-                    <td><img src="./icons/ice-cube.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
+                    <td><strong>${player.name}</strong><img src="./icons/ice-cube.png" alt="fire" width="25" height="25" /></td>
                 `;
       } else {
         row.innerHTML = `
