@@ -214,6 +214,10 @@ export async function calculatePlayerStreaks() {
     for (const player of playerStats) {
       const gameStats = game.players.find((p) => p.name === player.name);
 
+      if (gameStats == undefined) {
+        continue;
+      }
+
       const goals = gameStats?.goals ?? 0;
 
       player.gamesPlayed++;
