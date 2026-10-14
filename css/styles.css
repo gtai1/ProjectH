@@ -584,6 +584,10 @@ footer {
         padding: 10px;
     }
 
+    .game-date {
+        font-weight: bold;
+    }
+    
     .score-card {
         cursor: pointer;
     }
