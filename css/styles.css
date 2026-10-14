@@ -581,10 +581,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .score-card {
-        cursor: pointer;
-    }
-
     .score-card .score-details {
         display: none;
     }
