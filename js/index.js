@@ -71,7 +71,7 @@ export async function loadPlayerStats() {
     });
 
     //calculate player streaks
-    const playerStreaks = calculatePlayerStreaks();
+    const playerStreaks = await calculatePlayerStreaks();
 
     // Create a row for every player
     sortedPlayers.forEach((player) => {
