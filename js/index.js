@@ -206,7 +206,7 @@ export async function calculatePlayerStreaks() {
 
   // Process games chronologically (newest to oldest)
   const sortedGames = [...games].sort(
-    (b, a) => new Date(a.date) - new Date(b.date),
+    (a, b) => new Date(a.date) - new Date(b.date),
   );
 
   // Process each game
