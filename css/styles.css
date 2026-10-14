@@ -572,3 +572,28 @@ footer {
     margin-top: 15px;
     text-align: center;
 }
+
+/* =========================
+    Responsive Score Cards
+========================= */
+.score-details {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .score-card {
+        cursor: pointer;
+    }
+
+    .score-card .score-details {
+        display: none;
+    }
+
+    .score-card.expanded .score-details {
+        display: block;
+    }
+
+    .score-card.expanded .goal-scorers {
+        padding-top: 15px;
+    }
+}
