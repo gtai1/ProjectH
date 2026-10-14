@@ -599,8 +599,4 @@ footer {
     .score-card.expanded .score-details {
         display: block;
     }
-
-    .score-card.expanded .goal-scorers {
-        padding-top: 5px;
-    }
 }
