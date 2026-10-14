@@ -81,11 +81,11 @@ export async function loadPlayerStats() {
 
       if (currentPlayerStreak.currentGoalStreak >= 3) {
         row.innerHTML = `
-                    <td><strong>${player.name}</strong><img src="./icons/fire.png" alt="fire" width="25" height="25" /></td>
+                    <td><strong>${player.name}</strong><img src="./icons/fire.png" alt="fire" width="15" height="15" /></td>
                 `;
       } else if (currentPlayerStreak.currentUnluckyStreak >= 3) {
         row.innerHTML = `
-                    <td><strong>${player.name}</strong><img src="./icons/ice-cube.png" alt="fire" width="25" height="25" /></td>
+                    <td><strong>${player.name}</strong><img src="./icons/ice-cube.png" alt="fire" width="15" height="15" /></td>
                 `;
       } else {
         row.innerHTML = `
@@ -267,6 +267,5 @@ async function calculatePlayerStreaks() {
     }
   }
 
-  console.log(playerStats);
   return playerStats;
 }
