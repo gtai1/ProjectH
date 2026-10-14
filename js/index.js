@@ -70,12 +70,15 @@ export async function loadPlayerStats() {
       }
     });
 
+    //calculate player streaks
+    const playerStreaks = calculatePlayerStreaks();
+
     // Create a row for every player
     sortedPlayers.forEach((player) => {
       const row = document.createElement("tr");
 
       row.innerHTML = `
-                    <td><strong>${player.name}</strong></td>
+                    <td><img src="../icons/fire.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
                     <td>${player.gamesPlayed}</td>
                     <td>${player.goals}</td>
                     <td>${player.assists}</td>
@@ -181,7 +184,7 @@ export async function loadGameNews() {
   }
 }
 
-export async function calculatePlayerStreaks() {
+async function calculatePlayerStreaks() {
   // Fetch both JSON files
   const [playersResponse, gamesResponse] = await Promise.all([
     fetch("./data/players.json"),
