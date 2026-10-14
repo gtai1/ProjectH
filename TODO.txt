@@ -1,5 +1,3 @@
 Open to requests/suggestions
   - Cosmetics
   - Features
-Hot Streak/Cold Streak Icon and Functionality
-  - make sure that calculatePlayerStreaks works as intended
