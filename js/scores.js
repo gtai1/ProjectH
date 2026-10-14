@@ -70,7 +70,7 @@ export async function loadScores() {
         </div>
       `;
 
-      scoresData.appendChild(scoreCard);
+      scoresData.prepend(scoreCard);
     });
   } catch (error) {
     console.error("Error loading scores:", error);
