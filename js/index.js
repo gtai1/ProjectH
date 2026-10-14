@@ -77,13 +77,29 @@ export async function loadPlayerStats() {
     sortedPlayers.forEach((player) => {
       const row = document.createElement("tr");
 
-      row.innerHTML = `
+      const currentPlayerStreak = playerStreaks.find(playerStreak => playerStreak.name === player.name);
+
+      if (currentPlayerStreak.currentGoalStreak >= 3) {
+        row.innerHTML = `
                     <td><img src="./icons/fire.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
+                `;
+      } else if (currentPlayerStreak.currentUnluckyStreak >= 3) {
+        row.innerHTML = `
+                    <td><img src="./icons/ice-cube.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
+                `;
+      } else {
+        row.innerHTML = `
+                    <td><strong>${player.name}</strong></td>
+                `;
+      }
+
+      row.innerHTML += `
                     <td>${player.gamesPlayed}</td>
                     <td>${player.goals}</td>
                     <td>${player.assists}</td>
                     <td>${player.points}</td>
                 `;
+      
 
       tableBody.appendChild(row);
     });
