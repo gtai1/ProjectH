@@ -66,8 +66,6 @@ export async function loadScores() {
 
           </div>
 
-          // ${playerScores ? `<div class="goal-scorers">${playerScores}</div>` : ""}
-
           ${goals || assists ? `<div class="goal-scorers score-details">${playerScores}</div>` : ""}
 
           ${game.note ? `<div class="game-note">${game.note}</div>` : ""}
