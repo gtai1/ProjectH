@@ -63,6 +63,11 @@ export async function loadPlayerStats() {
       if (b.goals !== a.goals) {
         return b.goals - a.goals;
       }
+
+      // 3. Assists
+      if (b.assists !== a.assists) {
+        return b.assists - a.assists;
+      }
     });
 
     // Create a row for every player
@@ -118,8 +123,8 @@ export async function loadGameNews() {
 
       const score = `Black ${game.blackHomeScore} White ${game.whiteAwayScore}`;
 
-      // Get players who scored regular goals or post goals
-      const scorers = game.players.filter((player) => player.goals > 0);
+      // Get players who scored goals of have assists
+      const scorers = game.players.filter((player) => player.goals > 0 || player.assists > 0).sort((a, b) => b.goals - a.goals || b.assists - a.assists);
 
       // Format a player
       const formatPlayer = (player) => {
