@@ -109,14 +109,7 @@ export async function loadGoals(id) {
       row.innerHTML = `
         <td><strong>${player.name}</strong></td>
         <td>${player.gamesPlayed}</td>
-        <td>${player.wins}</td>
-        <td>${player.losses}</td>
-        <td>${player.ties}</td>
-        <td>${player.goalsFor}</td>
-        <td>${player.goalsAgainst}</td>
-        <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
-        <td>${player.goals}</td>
-      `;
+        <td>${player.goals}</td>`;
 
       if (id == "stats-body") {
         row.innerHTML += `
@@ -124,6 +117,17 @@ export async function loadGoals(id) {
           <td>${player.points}</td>
         `;
       }
+
+      row.innerHTML += `
+        <td>${player.wins}</td>
+        <td>${player.losses}</td>
+        <td>${player.ties}</td>
+        <td>${player.goalsFor}</td>
+        <td>${player.goalsAgainst}</td>
+        <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
+      `;
+
+      
 
       statsBody.appendChild(row);
     });
