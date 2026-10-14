@@ -52,7 +52,7 @@ export async function loadScores() {
           <div class="score">
             <div class="team-away">
               <span class="team-name">White</span>
-              <img src="../icons/white-jersey.svg" alt="WhiteJersey" width="25" hieght="25" />
+              <img src="../icons/white-jersey.svg" alt="WhiteJersey" width="25" height="25" />
               <span class="team-score">${game.whiteAwayScore}</span>
             </div>
 
@@ -60,7 +60,7 @@ export async function loadScores() {
             
             <div class="team-home">
               <span class="team-score">${game.blackHomeScore}</span>
-              <img src="../icons/black-jersey.svg" alt="BlackJersey" width="25" hieght="25" />
+              <img src="../icons/black-jersey.svg" alt="BlackJersey" width="25" height="25" />
               <span class="team-name">Black</span>
             </div>
 
