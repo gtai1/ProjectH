@@ -78,7 +78,7 @@ export async function loadPlayerStats() {
       const row = document.createElement("tr");
 
       row.innerHTML = `
-                    <td><img src="../icons/fire.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
+                    <td><img src="./icons/fire.png" alt="fire" width="25" height="25" /><strong>${player.name}</strong></td>
                     <td>${player.gamesPlayed}</td>
                     <td>${player.goals}</td>
                     <td>${player.assists}</td>
