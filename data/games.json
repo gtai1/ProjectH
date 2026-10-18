@@ -54,5 +54,30 @@
         "assists": 1
       }
     ]
+  },
+  {
+    "date": "2026-10-18",
+    "blackHomeScore": 7,
+    "whiteAwayScore": 9,
+    "players": [
+      {
+        "name": "Dom",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
+      }, 
+      {
+        "name": "Gavin",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
+      },   
+      {
+        "name": "Ryan",
+        "team": "black",
+        "goals": 1,
+        "assists": 0
+      }
+    ]
   }
 ]
