@@ -21,6 +21,12 @@
         "team": "black",
         "goals": 2,
         "assists": 1
+      },
+      {
+        "name": "Ethan",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
       }
     ]
   },
@@ -52,6 +58,12 @@
         "team": "white",
         "goals": 0,
         "assists": 1
+      },
+      {
+        "name": "Ethan",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
       }
     ]
   },
@@ -76,7 +88,13 @@
         "name": "Ryan",
         "team": "black",
         "goals": 1,
-        "assists": 0
+        "assists": 2
+      },
+      {
+        "name": "Ethan",
+        "team": "white",
+        "goals": 0,
+        "assists": 1
       }
     ]
   }
