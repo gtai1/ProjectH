@@ -22,5 +22,11 @@
     "number": 24,
     "position": "Center",
     "image": "24.jpg"
+  },
+  {
+    "name": "Ethan",
+    "number": 99,
+    "position": "Center",
+    "image": ""
   }
 ]
