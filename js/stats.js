@@ -130,7 +130,7 @@ export async function loadGoals(id) {
           return (a.gamesPlayed - b.gamesPlayed) * direction;
         }
       
-        return b.name.localeCompare(a.name) * direction;
+        return a.name.localeCompare(b.name) * direction;
       });
 
       statsBody.innerHTML = "";
