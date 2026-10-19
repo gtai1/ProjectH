@@ -85,52 +85,109 @@ export async function loadGoals(id) {
 
     const statsBody = document.getElementById(id);
 
-    // Clear existing rows
-    statsBody.innerHTML = "";
+    // Get the table headers
+    const table = statsBody.closest("table");
+    const headers = table.querySelectorAll("th[data-sort]");
 
-    // Sort:
-    // 1. Total goals
-    // 2. Regular goals
-    // 3. Post goals
-    const sortedPlayers = Object.values(playerStats).sort((a, b) => {
-      if (b.points !== a.points) {
-        return b.points - a.points;
-      }
+    let sortColumn = id === "stats-body" ? "points" : "goals";
+    let sortDirection = "desc";
 
-      if (b.goals !== a.goals) {
-        return b.goals - a.goals;
-      }
-    });
+    // Render the table
+    function renderStats() {
+      const sortedPlayers = Object.values(playerStats).sort((a, b) => {
+        const valueA = a[sortColumn] ?? 0;
+        const valueB = b[sortColumn] ?? 0;
 
-    // Create a row for every player
-    sortedPlayers.forEach((player) => {
-      const row = document.createElement("tr");
+        let result = typeof valueA === "string" ? valueA.localeCompare(valueB) : valueA - valueB;
 
-      row.innerHTML = `
-        <td><strong>${player.name}</strong></td>
-        <td>${player.gamesPlayed}</td>
-        <td>${player.goals}</td>`;
+        if (result === 0 && sortColumn !== "goals") {
+          result = b.goals - a.goals;
+        }
 
-      if (id == "stats-body") {
-        row.innerHTML += `
-          <td>${player.assists}</td>
-          <td>${player.points}</td>
+        if (result === 0) {
+          result = a.name.localeCompare(b.name);
+        }
+
+        return sortDirection === "asc" ? result : -result;
+      });
+
+      statsBody.innerHTML = "";
+
+      sortedPlayers.forEach((player) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td><strong>${player.name}</strong></td>
+          <td>${player.gamesPlayed}</td>
+          <td>${player.goals}</td>
         `;
-      }
 
-      row.innerHTML += `
-        <td>${player.wins}</td>
-        <td>${player.losses}</td>
-        <td>${player.ties}</td>
-        <td>${player.goalsFor}</td>
-        <td>${player.goalsAgainst}</td>
-        <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
-      `;
+        if (id === "stats-body") {
+          row.innerHTML += `
+            <td>${player.assists}</td>
+            <td>${player.points}</td>
+          `;
+        }
 
-      
+        row.innerHTML += `
+          <td>${player.wins}</td>
+          <td>${player.losses}</td>
+          <td>${player.ties}</td>
+          <td>${player.goalsFor}</td>
+          <td>${player.goalsAgainst}</td>
+          <td>${player.plusMinus > 0 ? "+" : ""}${player.plusMinus}</td>
+        `;
 
-      statsBody.appendChild(row);
+        statsBody.appendChild(row);
+      });
+
+      // Update the active column's arrow
+      headers.forEach((header) => {
+        const active = header.dataset.sort === sortColumn;
+
+        header.classList.toggle("sort-active", active);
+        header.setAttribute(
+          "aria-sort",
+          active
+            ? sortDirection === "asc" ? "ascending" : "descending"
+            : "none"
+        );
+
+        header.querySelector(".sort-arrow")?.remove();
+
+        if (active) {
+          const arrow = document.createElement("span");
+          arrow.className = "sort-arrow";
+          arrow.textContent = sortDirection === "asc" ? " ▲" : " ▼";
+          header.appendChild(arrow);
+        }
+      });
+    }
+
+    // Add click events to the headers
+    headers.forEach((header) => {
+      if (header.dataset.sortableBound === "true") return;
+      header.dataset.sortableBound = "true";
+
+      const sort = () => {
+        const column = header.dataset.sort;
+
+        if (sortColumn === column) {
+          sortDirection = sortDirection === "desc" ? "asc" : "desc";
+        } else {
+          sortColumn = column;
+          sortDirection = column === "name" ? "asc" : "desc";
+        }
+
+        renderStats();
+      };
+
+      header.addEventListener("click", sort);
     });
+
+    // Initial table display
+    renderStats();
+
   } catch (error) {
     console.error("Error loading player stats:", error);
   }
