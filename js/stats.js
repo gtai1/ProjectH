@@ -214,7 +214,7 @@ export async function loadGoals(id) {
           sortDirection = sortDirection === "desc" ? "asc" : "desc";
         } else {
           sortColumn = column;
-          sortDirection = column === "name" ? "asc" : "desc";
+          sortDirection = "desc";
         }
 
         renderStats();
