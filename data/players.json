@@ -26,6 +26,7 @@
   {
     "name": "Ethan",
     "number": 5,
-    "position": "Center"
+    "position": "Center",
+    "image": "5.jpg"
   }
 ]
