@@ -480,6 +480,14 @@ footer {
     background-color: #1b344b;
 }
 
+.stats-table td.sort-active {
+    background-color: #e3eaf1;
+}
+
+.stats-table tbody tr:hover td.sort-active {
+    background-color: #d5e0eb;
+}
+
 /* =========================
     Scores
 ========================== */
