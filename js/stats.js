@@ -163,7 +163,7 @@ export async function loadGoals(id) {
         statsBody.appendChild(row);
       });
 
-      // Update the active column's arrow
+      // Highlight the active column header
       headers.forEach((header) => {
         const active = header.dataset.sort === sortColumn;
 
@@ -174,6 +174,17 @@ export async function loadGoals(id) {
             ? sortDirection === "asc" ? "ascending" : "descending"
             : "none"
         );
+      });
+
+      // Highlight the cells in the active column
+      const activeIndex = Array.from(headers).findIndex(
+        (header) => header.dataset.sort === sortColumn
+      );
+
+      statsBody.querySelectorAll("tr").forEach((row) => {
+        Array.from(row.cells).forEach((cell, index) => {
+          cell.classList.toggle("sort-active", index === activeIndex);
+        });
       });
     }
 
