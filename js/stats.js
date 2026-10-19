@@ -163,17 +163,31 @@ export async function loadGoals(id) {
         statsBody.appendChild(row);
       });
 
-      // Highlight the active column header
+      // Highlight the active column header and display sort arrows
       headers.forEach((header) => {
-        const active = header.dataset.sort === sortColumn;
-
-        header.classList.toggle("sort-active", active);
-        header.setAttribute(
-          "aria-sort",
-          active
-            ? sortDirection === "asc" ? "ascending" : "descending"
-            : "none"
-        );
+          const active = header.dataset.sort === sortColumn;
+      
+          header.classList.toggle("sort-active", active);
+      
+          header.setAttribute(
+              "aria-sort",
+              active
+                  ? sortDirection === "asc" ? "ascending" : "descending"
+                  : "none"
+          );
+      
+          // Add the arrow to whichever column is being sorted
+          let arrow = header.querySelector(".sort-arrow");
+      
+          if (!arrow) {
+              arrow = document.createElement("span");
+              arrow.className = "sort-arrow";
+              header.appendChild(arrow);
+          }
+      
+          arrow.textContent = active
+              ? (sortDirection === "asc" ? " ▲" : " ▼")
+              : "";
       });
 
       // Highlight the cells in the active column
