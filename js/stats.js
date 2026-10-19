@@ -174,15 +174,6 @@ export async function loadGoals(id) {
             ? sortDirection === "asc" ? "ascending" : "descending"
             : "none"
         );
-
-        header.querySelector(".sort-arrow")?.remove();
-
-        if (active) {
-          const arrow = document.createElement("span");
-          arrow.className = "sort-arrow";
-          arrow.textContent = sortDirection === "asc" ? " ▲" : " ▼";
-          header.appendChild(arrow);
-        }
       });
     }
 
