@@ -97,18 +97,32 @@ export async function loadGoals(id) {
       const sortedPlayers = Object.values(playerStats).sort((a, b) => {
         const valueA = a[sortColumn] ?? 0;
         const valueB = b[sortColumn] ?? 0;
-
-        let result = typeof valueA === "string" ? valueA.localeCompare(valueB) : valueA - valueB;
-
-        if (result === 0 && sortColumn !== "goals") {
-          result = b.goals - a.goals;
+      
+        // Sort by the selected column first
+        let result;
+      
+        if (typeof valueA === "string") {
+          result = valueA.localeCompare(valueB);
+        } else {
+          result = valueB - valueA;
         }
-
-        if (result === 0) {
-          result = a.name.localeCompare(b.name);
+      
+        // Apply the selected direction to the primary column
+        if (sortDirection === "asc") {
+          result = -result;
         }
-
-        return sortDirection === "asc" ? result : -result;
+      
+        if (result !== 0) return result;
+      
+        // Tie-breakers: Points, Goals, Assists, GP, then Name
+        if (a.points !== b.points) return b.points - a.points;
+        if (a.goals !== b.goals) return b.goals - a.goals;
+        if (a.assists !== b.assists) return b.assists - a.assists;
+        if (a.gamesPlayed !== b.gamesPlayed) {
+          return a.gamesPlayed - b.gamesPlayed;
+        }
+      
+        return a.name.localeCompare(b.name);
       });
 
       statsBody.innerHTML = "";
