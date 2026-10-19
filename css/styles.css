@@ -475,6 +475,12 @@ footer {
     white-space: nowrap;
 }
 
+.stats-table th .sort-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.75rem;
+}
+
 .stats-table th.sortable:hover,
 .stats-table th.sort-active {
     background-color: #1b344b;
