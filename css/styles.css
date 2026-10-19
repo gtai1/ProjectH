@@ -469,6 +469,22 @@ footer {
     background-color: #f4f6f9;
 }
 
+.stats-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.stats-table th.sortable:hover,
+.stats-table th.sort-active {
+    background-color: #1b344b;
+}
+
+.stats-table .sort-arrow {
+    font-size: 0.7em;
+    margin-left: 3px;
+}
+
 /* =========================
     Scores
 ========================== */
