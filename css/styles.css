@@ -723,20 +723,21 @@ footer {
     display: block;
 }
 
+/* Responsive Score Cards */
 @media (max-width: 768px) {
     .game-header {
         padding: 10px;
     }
 
     .game-date {
-        margin-bottom: 0px;
+        margin-bottom: 0;
         font-weight: bold;
     }
-    
+
     .score-card {
         cursor: pointer;
     }
-    
+
     .score-card .score-details {
         display: none;
     }
@@ -745,8 +746,7 @@ footer {
         display: block;
     }
 
-    .goal-scorers {
-        margin-top: 0px;
-        text-align: center;
+    .score-card .score-scorers {
+        gap: 12px;
     }
 }
