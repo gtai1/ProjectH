@@ -216,6 +216,47 @@ nav ul li a.active {
     border-top: 1px solid #ddd;
 }
 
+/* Compact player stats in homepage game cards */
+.news-card .news-scorer-team {
+    margin-top: 10px;
+}
+
+.news-card .news-scorer-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #666;
+}
+
+.news-card .news-scorer-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 14px;
+    row-gap: 5px;
+}
+
+.news-card .news-player-stat {
+    display: inline-flex;
+    flex: 0 1 calc(50% - 7px);
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 5px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.news-card .news-player-stat strong {
+    font-weight: 600;
+}
+
+.news-card .news-player-stat > span {
+    white-space: nowrap;
+    color: #555;
+}
+
 /* =========================
     Standings Sidebar
 ========================= */
