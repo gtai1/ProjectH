@@ -246,7 +246,7 @@ nav ul li a.active {
 
 .news-card .news-player-stat {
     display: grid;
-    grid-template-columns: minmax(0, .25fr) auto;
+    grid-template-columns: minmax(0, .5fr) auto;
     align-items: baseline;
     gap: 5px;
     min-width: 0;
@@ -262,7 +262,7 @@ nav ul li a.active {
 .news-card .news-player-stat > span {
     white-space: nowrap;
     color: #555;
-    text-align: left;
+    text-align: center;
 }
 
 /* =========================
@@ -763,7 +763,7 @@ footer {
 
 .score-card .score-player-stat {
     display: grid;
-    grid-template-columns: minmax(0, .25fr) auto;
+    grid-template-columns: minmax(0, .5fr) auto;
     align-items: baseline;
     gap: 5px;
     min-width: 0;
@@ -779,7 +779,7 @@ footer {
 .score-card .score-player-stat > span {
     white-space: nowrap;
     color: #555;
-    text-align: left;
+    text-align: center;
 }
 
 /* =========================
