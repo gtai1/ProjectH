@@ -9,7 +9,13 @@
         "team": "black",
         "goals": 1,
         "assists": 2
-      }, 
+      },
+      {
+        "name": "Ethan",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
+      },
       {
         "name": "Gavin",
         "team": "black",
@@ -21,12 +27,6 @@
         "team": "black",
         "goals": 2,
         "assists": 1
-      },
-      {
-        "name": "Ethan",
-        "team": "white",
-        "goals": 0,
-        "assists": 0
       }
     ]
   },
@@ -36,11 +36,23 @@
     "whiteAwayScore": 4,
     "players": [
       {
+        "name": "Angus",
+        "team": "white",
+        "goals": 0,
+        "assists": 1
+      },
+      {
         "name": "Dom",
         "team": "white",
         "goals": 3,
         "assists": 1
-      }, 
+      },
+      {
+        "name": "Ethan",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
+      },
       {
         "name": "Gavin",
         "team": "white",
@@ -52,18 +64,6 @@
         "team": "white",
         "goals": 0,
         "assists": 1
-      },
-      {
-        "name": "Angus",
-        "team": "white",
-        "goals": 0,
-        "assists": 1
-      },
-      {
-        "name": "Ethan",
-        "team": "white",
-        "goals": 0,
-        "assists": 0
       }
     ]
   },
@@ -78,7 +78,13 @@
         "team": "white",
         "goals": 1,
         "assists": 2
-      }, 
+      },
+      {
+        "name": "Ethan",
+        "team": "white",
+        "goals": 0,
+        "assists": 2
+      },
       {
         "name": "Gavin",
         "team": "white",
@@ -89,12 +95,6 @@
         "name": "Ryan",
         "team": "black",
         "goals": 1,
-        "assists": 2
-      },
-      {
-        "name": "Ethan",
-        "team": "white",
-        "goals": 0,
         "assists": 2
       }
     ]
