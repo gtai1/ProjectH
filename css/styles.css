@@ -75,6 +75,10 @@ nav ul li a:hover {
   width: 100%;
 }
 
+nav ul li a.active {
+    color: #e63946;
+}
+
 /* =========================
     Hero Banner
 ========================= */
