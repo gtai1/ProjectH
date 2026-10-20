@@ -244,10 +244,10 @@ nav ul li a.active {
 }
 
 .news-card .news-player-stat {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: baseline;
-    gap: 2px 5px;
+    gap: 5px;
     min-width: 0;
     font-size: 0.85rem;
     line-height: 1.4;
@@ -255,11 +255,13 @@ nav ul li a.active {
 
 .news-card .news-player-stat strong {
     font-weight: 600;
+    min-width: 0;
 }
 
 .news-card .news-player-stat > span {
     white-space: nowrap;
     color: #555;
+    text-align: right;
 }
 
 /* =========================
