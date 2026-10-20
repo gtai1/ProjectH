@@ -159,8 +159,8 @@ export async function loadGameNews() {
         .join(", ");
 
       const playerGoals = [
-        blackScorers ? `Black: ${blackScorers}` : "",
         whiteScorers ? `White: ${whiteScorers}` : "",
+        blackScorers ? `Black: ${blackScorers}` : "",
       ]
         .filter(Boolean)
         .join("<br>");
