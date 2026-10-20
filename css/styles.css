@@ -246,7 +246,7 @@ nav ul li a.active {
 
 .news-card .news-player-stat {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, .25fr) auto;
     align-items: baseline;
     gap: 5px;
     min-width: 0;
@@ -763,7 +763,7 @@ footer {
 
 .score-card .score-player-stat {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, .25fr) auto;
     align-items: baseline;
     gap: 5px;
     min-width: 0;
