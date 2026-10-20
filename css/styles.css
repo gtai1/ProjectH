@@ -353,7 +353,7 @@ footer {
     }
     
     .news-card .news-scorers {
-    gap: 12px;
+        gap: 12px;
     }
 
     #news {
