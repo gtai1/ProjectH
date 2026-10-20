@@ -117,21 +117,16 @@ export async function loadGameNews() {
     }
 
     const games = await response.json();
-
     const newsContainer = document.getElementById("news-container");
 
-    // Clear existing cards
     newsContainer.innerHTML = "";
 
-    // Sort games from newest to oldest
-    // and take only the most recent 3
-    const recentGames = games
+    // Sort newest to oldest and take the latest 3 games
+    const recentGames = [...games]
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 3);
 
-    // Create a news card for each recent game
     recentGames.forEach((game) => {
-      // Format ISO date for display
       const gameDate = new Date(game.date + "T00:00:00");
 
       const formattedDate = gameDate.toLocaleDateString("en-US", {
@@ -140,31 +135,29 @@ export async function loadGameNews() {
         year: "numeric",
       });
 
-      const score = `White ${game.whiteAwayScore} Black ${game.blackHomeScore}`;
+      // Get players with goals or assists
+      const scorers = game.players
+        .filter((player) => player.goals > 0 || player.assists > 0)
+        .sort(
+          (a, b) =>
+            b.goals - a.goals || b.assists - a.assists
+        );
 
-      // Get players who scored goals of have assists
-      const scorers = game.players.filter((player) => player.goals > 0 || player.assists > 0).sort((a, b) => b.goals - a.goals || b.assists - a.assists);
+      const formatPlayer = (player) =>
+        `${player.name} ${player.goals}G ${player.assists}A ${
+          player.goals + player.assists
+        }P`;
 
-      // Format a player
-      const formatPlayer = (player) => {
-        let text = `${player.name} ${player.goals}G ${player.assists}A ${player.goals + player.assists}P`;
-
-        return text;
-      };
-
-      // Get White scorers
       const whiteScorers = scorers
         .filter((player) => player.team[0].toUpperCase() === "W")
         .map(formatPlayer)
         .join(", ");
-      
-      // Get Black scorers
+
       const blackScorers = scorers
         .filter((player) => player.team[0].toUpperCase() === "B")
         .map(formatPlayer)
         .join(", ");
 
-      // Build player goals text
       const playerGoals = [
         blackScorers ? `Black: ${blackScorers}` : "",
         whiteScorers ? `White: ${whiteScorers}` : "",
@@ -182,13 +175,33 @@ export async function loadGameNews() {
             ${formattedDate}
           </div>
 
-          <h4>
-            ${score}
-          </h4>
+          <div class="home-score">
 
-          <p>
-            ${playerGoals}
-          </p>
+            <div class="home-score-row">
+              <div class="home-team-info">
+                <img src="./icons/white-jersey.svg"
+                     alt="White jersey" width="25" height="25">
+                <span class="home-team-name">White</span>
+              </div>
+              <span class="home-team-score">${game.whiteAwayScore}</span>
+            </div>
+
+            <div class="home-score-row">
+              <div class="home-team-info">
+                <img src="./icons/black-jersey.svg"
+                     alt="Black jersey" width="25" height="25">
+                <span class="home-team-name">Black</span>
+              </div>
+              <span class="home-team-score">${game.blackHomeScore}</span>
+            </div>
+
+          </div>
+
+          ${playerGoals ? `
+            <p>
+              ${playerGoals}
+            </p>
+          ` : ""}
 
         </div>
       `;
