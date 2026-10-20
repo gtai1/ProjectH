@@ -217,13 +217,20 @@ nav ul li a.active {
 }
 
 /* Compact player stats in homepage game cards */
+.news-card .news-scorers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
 .news-card .news-scorer-team {
-    margin-top: 10px;
+    min-width: 0;
 }
 
 .news-card .news-scorer-label {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -232,18 +239,16 @@ nav ul li a.active {
 
 .news-card .news-scorer-list {
     display: flex;
-    flex-wrap: wrap;
-    column-gap: 14px;
-    row-gap: 5px;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .news-card .news-player-stat {
-    display: inline-flex;
-    flex: 0 1 calc(50% - 7px);
-    min-width: 0;
+    display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    column-gap: 5px;
+    gap: 2px 5px;
+    min-width: 0;
     font-size: 0.85rem;
     line-height: 1.4;
 }
@@ -332,7 +337,11 @@ footer {
         gap: 15px;
     }
 
-     #news {
+    .news-card .news-scorers {
+    gap: 12px;
+    }
+
+    #news {
         scroll-margin-top: 120px;
     }
 }
