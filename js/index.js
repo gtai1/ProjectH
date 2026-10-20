@@ -207,9 +207,9 @@ export async function loadGameNews() {
           </div>
 
           ${playerGoals ? `
-            <p>
-              ${playerGoals}
-            </p>
+              <div class="news-card-details">
+                  ${playerGoals}
+              </div>
           ` : ""}
 
         </div>
