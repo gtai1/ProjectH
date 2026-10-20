@@ -210,7 +210,8 @@ nav ul li a.active {
     font-variant-numeric: tabular-nums;
 }
 
-.news-card .home-score + p {
+/* Expandable player details */
+.news-card .news-card-details {
     margin-top: 12px;
     padding-top: 10px;
     border-top: 1px solid #ddd;
@@ -339,6 +340,18 @@ footer {
         gap: 15px;
     }
 
+    .news-card {
+        cursor: pointer;
+    }
+
+    .news-card .news-card-details {
+        display: none;
+    }
+
+    .news-card.expanded .news-card-details {
+        display: block;
+    }
+    
     .news-card .news-scorers {
     gap: 12px;
     }
