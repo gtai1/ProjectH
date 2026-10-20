@@ -12,6 +12,12 @@
     "image": "14.jpg"
   },
   {
+    "name": "Ethan",
+    "number": 5,
+    "position": "Center",
+    "image": "5.jpg"
+  },
+  {
     "name": "Gavin",
     "number": 7,
     "position": "Left Wing",
@@ -23,10 +29,4 @@
     "position": "Center",
     "image": "24.jpg"
   },
-  {
-    "name": "Ethan",
-    "number": 5,
-    "position": "Center",
-    "image": "5.jpg"
-  }
 ]
