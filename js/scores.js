@@ -51,14 +51,14 @@ export async function loadScores() {
               <div class="score-scorer-team">
                 <span class="score-scorer-label">TEAM WHITE</span>
                 <div class="score-scorer-list">
-                  ${whiteScorers || '<span class="no-scorers">No points</span>'}
+                  ${whiteScorers}
                 </div>
               </div>
 
               <div class="score-scorer-team">
                 <span class="score-scorer-label">TEAM BLACK</span>
                 <div class="score-scorer-list">
-                  ${blackScorers || '<span class="no-scorers">No points</span>'}
+                  ${blackScorers}
                 </div>
               </div>
             </div>
