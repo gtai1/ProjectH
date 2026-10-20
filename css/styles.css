@@ -717,13 +717,79 @@ footer {
 }
 
 /* =========================
-    Responsive Score Cards
+    Score Player Statistics
 ========================= */
-.score-details {
-    display: block;
+.score-card .game-note {
+    margin-top: 8px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
 }
 
-/* Responsive Score Cards */
+/* Divider between the score/notes and player statistics */
+.score-card .score-details {
+    display: block;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+/* Two columns: Team White and Team Black */
+.score-card .score-scorers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.score-card .score-scorer-team {
+    min-width: 0;
+}
+
+.score-card .score-scorer-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #666;
+}
+
+.score-card .score-scorer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.score-card .score-player-stat {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 5px;
+    min-width: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.score-card .score-player-stat strong {
+    min-width: 0;
+    font-weight: 600;
+}
+
+.score-card .score-player-stat > span {
+    white-space: nowrap;
+    color: #555;
+    text-align: right;
+}
+
+.score-card .no-scorers {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* =========================
+    Responsive Score Cards
+========================= */
 @media (max-width: 768px) {
     .game-header {
         padding: 10px;
@@ -738,6 +804,7 @@ footer {
         cursor: pointer;
     }
 
+    /* Hide player statistics until a card is tapped */
     .score-card .score-details {
         display: none;
     }
