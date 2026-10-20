@@ -140,7 +140,7 @@ export async function loadGameNews() {
         year: "numeric",
       });
 
-      const score = `Black ${game.blackHomeScore} White ${game.whiteAwayScore}`;
+      const score = `White ${game.whiteAwayScore} Black ${game.blackHomeScore}`;
 
       // Get players who scored goals of have assists
       const scorers = game.players.filter((player) => player.goals > 0 || player.assists > 0).sort((a, b) => b.goals - a.goals || b.assists - a.assists);
