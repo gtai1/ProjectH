@@ -152,15 +152,15 @@ export async function loadGameNews() {
         return text;
       };
 
+      // Get White scorers
+      const whiteScorers = scorers
+        .filter((player) => player.team[0].toUpperCase() === "W")
+        .map(formatPlayer)
+        .join(", ");
+      
       // Get Black scorers
       const blackScorers = scorers
         .filter((player) => player.team[0].toUpperCase() === "B")
-        .map(formatPlayer)
-        .join(", ");
-
-      // Get Whitie scorers
-      const whiteScorers = scorers
-        .filter((player) => player.team[0].toUpperCase() === "W")
         .map(formatPlayer)
         .join(", ");
 
