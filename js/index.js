@@ -158,19 +158,15 @@ export async function loadGameNews() {
       
       const playerGoals = (whiteScorers || blackScorers) ? `
           <div class="news-scorers">
-              ${whiteScorers ? `
-                  <div class="news-scorer-team">
-                      <span class="news-scorer-label">TEAM WHITE</span>
-                      <div class="news-scorer-list">${whiteScorers}</div>
-                  </div>
-              ` : ""}
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label">TEAM WHITE</span>
+                  <div class="news-scorer-list">${whiteScorers}</div>
+              </div>
       
-              ${blackScorers ? `
-                  <div class="news-scorer-team">
-                      <span class="news-scorer-label">TEAM BLACK</span>
-                      <div class="news-scorer-list">${blackScorers}</div>
-                  </div>
-              ` : ""}
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label">TEAM BLACK</span>
+                  <div class="news-scorer-list">${blackScorers}</div>
+              </div>
           </div>
       ` : "";
 
