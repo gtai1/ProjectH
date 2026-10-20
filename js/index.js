@@ -135,35 +135,41 @@ export async function loadGameNews() {
         year: "numeric",
       });
 
-      // Get players with goals or assists
       const scorers = game.players
-        .filter((player) => player.goals > 0 || player.assists > 0)
-        .sort(
-          (a, b) =>
-            b.goals - a.goals || b.assists - a.assists
-        );
-
-      const formatPlayer = (player) =>
-        `${player.name} ${player.goals}G ${player.assists}A ${
-          player.goals + player.assists
-        }P`;
-
+          .filter(player => player.goals > 0 || player.assists > 0)
+          .sort((a, b) => b.goals - a.goals || b.assists - a.assists);
+      
+      const formatPlayer = (player) => `
+          <span class="news-player-stat">
+              <strong>${player.name}</strong>
+              <span>${player.goals}G · ${player.assists}A · ${player.goals + player.assists}P</span>
+          </span>
+      `;
+      
       const whiteScorers = scorers
-        .filter((player) => player.team[0].toUpperCase() === "W")
-        .map(formatPlayer)
-        .join(", ");
-
+          .filter(player => player.team[0].toUpperCase() === "W")
+          .map(formatPlayer)
+          .join("");
+      
       const blackScorers = scorers
-        .filter((player) => player.team[0].toUpperCase() === "B")
-        .map(formatPlayer)
-        .join(", ");
-
+          .filter(player => player.team[0].toUpperCase() === "B")
+          .map(formatPlayer)
+          .join("");
+      
       const playerGoals = [
-        whiteScorers ? `White: ${whiteScorers}` : "",
-        blackScorers ? `Black: ${blackScorers}` : "",
-      ]
-        .filter(Boolean)
-        .join("<br>");
+          whiteScorers ? `
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label">WHITE</span>
+                  <div class="news-scorer-list">${whiteScorers}</div>
+              </div>
+          ` : "",
+          blackScorers ? `
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label">BLACK</span>
+                  <div class="news-scorer-list">${blackScorers}</div>
+              </div>
+          ` : ""
+      ].filter(Boolean).join("");
 
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
