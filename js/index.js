@@ -181,7 +181,7 @@ export async function loadGameNews() {
               <div class="home-team-info">
                 <img src="./icons/white-jersey.svg"
                      alt="White jersey" width="25" height="25">
-                <span class="home-team-name">White</span>
+                <span class="home-team-name">Team White</span>
               </div>
               <span class="home-team-score">${game.whiteAwayScore}</span>
             </div>
@@ -190,7 +190,7 @@ export async function loadGameNews() {
               <div class="home-team-info">
                 <img src="./icons/black-jersey.svg"
                      alt="Black jersey" width="25" height="25">
-                <span class="home-team-name">Black</span>
+                <span class="home-team-name">Team Black</span>
               </div>
               <span class="home-team-score">${game.blackHomeScore}</span>
             </div>
