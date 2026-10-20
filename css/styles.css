@@ -246,8 +246,7 @@ nav ul li a.active {
 
 .news-card .news-player-stat {
     display: grid;
-    grid-template-columns: auto auto;
-    justify-content: start;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: baseline;
     gap: 5px;
     min-width: 0;
