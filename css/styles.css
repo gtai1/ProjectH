@@ -262,7 +262,7 @@ nav ul li a.active {
 .news-card .news-player-stat > span {
     white-space: nowrap;
     color: #555;
-    text-align: right;
+    text-align: center;
 }
 
 /* =========================
