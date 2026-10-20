@@ -782,11 +782,6 @@ footer {
     text-align: right;
 }
 
-.score-card .no-scorers {
-    color: #888;
-    font-size: 0.85rem;
-}
-
 /* =========================
     Responsive Score Cards
 ========================= */
