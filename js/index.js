@@ -159,13 +159,13 @@ export async function loadGameNews() {
       const playerGoals = [
           whiteScorers ? `
               <div class="news-scorer-team">
-                  <span class="news-scorer-label">WHITE</span>
+                  <span class="news-scorer-label">TEAM WHITE</span>
                   <div class="news-scorer-list">${whiteScorers}</div>
               </div>
           ` : "",
           blackScorers ? `
               <div class="news-scorer-team">
-                  <span class="news-scorer-label">BLACK</span>
+                  <span class="news-scorer-label">TEAM BLACK</span>
                   <div class="news-scorer-list">${blackScorers}</div>
               </div>
           ` : ""
