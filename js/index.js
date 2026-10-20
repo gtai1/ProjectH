@@ -217,6 +217,26 @@ export async function loadGameNews() {
 
       newsContainer.appendChild(newsCard);
     });
+
+    // Expand player stats when a card is tapped on mobile
+    newsContainer.onclick = (event) => {
+        if (window.matchMedia("(min-width: 769px)").matches) {
+            return;
+        }
+    
+        const card = event.target.closest(".news-card");
+    
+        if (!card || !newsContainer.contains(card)) {
+            return;
+        }
+    
+        if (!card.querySelector(".news-card-details")) {
+            return;
+        }
+    
+        card.classList.toggle("expanded");
+    };
+    
   } catch (error) {
     console.error("Error loading game news:", error);
   }
