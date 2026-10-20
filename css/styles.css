@@ -322,6 +322,8 @@ footer {
 
     .container {
         grid-template-columns: 1fr;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .hero {
