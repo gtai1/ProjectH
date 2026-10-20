@@ -177,6 +177,39 @@ nav ul li a.active {
     margin-bottom: 10px;
 }
 
+.news-card .home-score {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.news-card .home-score-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.news-card .home-team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.news-card .home-team-info img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    display: block;
+}
+
+.news-card .home-team-score {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
 /* =========================
     Standings Sidebar
 ========================= */
