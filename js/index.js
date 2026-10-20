@@ -156,20 +156,23 @@ export async function loadGameNews() {
           .map(formatPlayer)
           .join("");
       
-      const playerGoals = [
-          whiteScorers ? `
-              <div class="news-scorer-team">
-                  <span class="news-scorer-label">TEAM WHITE</span>
-                  <div class="news-scorer-list">${whiteScorers}</div>
-              </div>
-          ` : "",
-          blackScorers ? `
-              <div class="news-scorer-team">
-                  <span class="news-scorer-label">TEAM BLACK</span>
-                  <div class="news-scorer-list">${blackScorers}</div>
-              </div>
-          ` : ""
-      ].filter(Boolean).join("");
+      const playerGoals = (whiteScorers || blackScorers) ? `
+          <div class="news-scorers">
+              ${whiteScorers ? `
+                  <div class="news-scorer-team">
+                      <span class="news-scorer-label">TEAM WHITE</span>
+                      <div class="news-scorer-list">${whiteScorers}</div>
+                  </div>
+              ` : ""}
+      
+              ${blackScorers ? `
+                  <div class="news-scorer-team">
+                      <span class="news-scorer-label">TEAM BLACK</span>
+                      <div class="news-scorer-list">${blackScorers}</div>
+                  </div>
+              ` : ""}
+          </div>
+      ` : "";
 
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
