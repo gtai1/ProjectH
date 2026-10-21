@@ -8,25 +8,29 @@
         "name": "Dom",
         "team": "black",
         "goals": 1,
-        "assists": 2
+        "assists": 2,
+        "position": "forward"
       },
       {
         "name": "Ethan",
         "team": "white",
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },
       {
         "name": "Gavin",
         "team": "black",
         "goals": 2,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },   
       {
         "name": "Ryan",
         "team": "black",
         "goals": 2,
-        "assists": 1
+        "assists": 1,
+        "position": "forward"
       }
     ]
   },
@@ -39,31 +43,36 @@
         "name": "Angus",
         "team": "white",
         "goals": 0,
-        "assists": 1
+        "assists": 1,
+        "position": "defense"
       },
       {
         "name": "Dom",
         "team": "white",
         "goals": 3,
-        "assists": 1
+        "assists": 1,
+        "position": "forward"
       },
       {
         "name": "Ethan",
         "team": "white",
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },
       {
         "name": "Gavin",
         "team": "white",
         "goals": 1,
-        "assists": 2
+        "assists": 2,
+        "position": "forward"
       },   
       {
         "name": "Ryan",
         "team": "white",
         "goals": 0,
-        "assists": 1
+        "assists": 1,
+        "position": "forward"
       }
     ]
   },
@@ -77,25 +86,29 @@
         "name": "Dom",
         "team": "white",
         "goals": 1,
-        "assists": 2
+        "assists": 2,
+        "position": "forward"
       },
       {
         "name": "Ethan",
         "team": "white",
         "goals": 0,
-        "assists": 2
+        "assists": 2,
+        "position": "forward"
       },
       {
         "name": "Gavin",
         "team": "white",
         "goals": 0,
-        "assists": 2
+        "assists": 2,
+        "position": "forward"
       },   
       {
         "name": "Ryan",
         "team": "black",
         "goals": 1,
-        "assists": 2
+        "assists": 2,
+        "position": "forward"
       }
     ]
   },
@@ -109,31 +122,36 @@
         "name": "Angus",
         "team": "white",
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },
       {
         "name": "Dom",
         "team": "black",
         "goals": 1,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },
       {
         "name": "Ethan",
         "team": "black",
         "goals": 1,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },
       {
         "name": "Gavin",
         "team": "black",
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "position": "forward"
       },   
       {
         "name": "Ryan",
         "team": "black",
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "position": "defense"
       }
     ]
   }
