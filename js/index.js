@@ -89,7 +89,7 @@ export async function loadPlayerStats() {
                 `;
       } else if (currentPlayerStreak.currentUnluckyStreak == 2 || currentPlayerStreak.currentGoalStreak == 2) {
         row.innerHTML = `
-                    <td><strong>${player.name}</strong> <img src="./icons/eyes.png" alt="eyes" width="13" height="13" /></td>
+                    <td><strong>${player.name}</strong> <img src="./icons/eyes.png" alt="eyes" width="15" height="15" /></td>
                 `;
       } else {
         row.innerHTML = `
