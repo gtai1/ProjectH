@@ -394,7 +394,7 @@ footer {
             rgba(13, 27, 42, 0.85),
             rgba(13, 27, 42, 0.85)
         ),
-        url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?auto=format&fit=crop&w=1600&q=80')
+        url('../images/hero.jpg')
         no-repeat center center / cover;
 
     color: #fff;
