@@ -26,9 +26,9 @@ export async function loadScores() {
       // Format each player's statistics
       const formatPlayer = (player) => `
         <span class="score-player-stat">
-          <span>
+          <div>
             <strong>${player.name}</strong> ${player.position === 'forward' ? 'FWD' : player.position === 'defense' ? 'DEF' : ''}
-          </span>
+          </div>
           <span>
             ${player.goals}G · ${player.assists}A · ${player.goals + player.assists}P
           </span>
