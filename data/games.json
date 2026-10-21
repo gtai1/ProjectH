@@ -1,33 +1,35 @@
 [
   {
     "date": "2026-10-03",
-    "blackHomeScore": 5,
-    "whiteAwayScore": 1,
+    "homeScore": 5,
+    "awayScore": 1,
+    "alternateHomeName": "Team Black",
+    "alternateAwayName": "Team White",
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 1,
         "assists": 2,
         "position": "forward"
       },
       {
         "name": "Ethan",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 0,
         "position": "forward"
       },
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 2,
         "assists": 0,
         "position": "forward"
       },   
       {
         "name": "Ryan",
-        "team": "black",
+        "team": "home",
         "goals": 2,
         "assists": 1,
         "position": "forward"
@@ -36,40 +38,42 @@
   },
   {
     "date": "2026-10-10",
-    "blackHomeScore": 4,
-    "whiteAwayScore": 4,
+    "homeScore": 4,
+    "awayScore": 4,
+    "alternateHomeName": "Team Black",
+    "alternateAwayName": "Team White",
     "players": [
       {
         "name": "Angus",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 1,
         "position": "defense"
       },
       {
         "name": "Dom",
-        "team": "white",
+        "team": "away",
         "goals": 3,
         "assists": 1,
         "position": "forward"
       },
       {
         "name": "Ethan",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 0,
         "position": "defense"
       },
       {
         "name": "Gavin",
-        "team": "white",
+        "team": "away",
         "goals": 1,
         "assists": 2,
         "position": "forward"
       },   
       {
         "name": "Ryan",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 1,
         "position": "forward"
@@ -78,34 +82,36 @@
   },
   {
     "date": "2026-10-17",
-    "blackHomeScore": 8,
-    "whiteAwayScore": 9,
+    "homeScore": 8,
+    "awayScore": 9,
+    "alternateHomeName": "Team Black",
+    "alternateAwayName": "Team White",
     "note": "Orleans, no ref",
     "players": [
       {
         "name": "Dom",
-        "team": "white",
+        "team": "away",
         "goals": 1,
         "assists": 2,
         "position": "forward"
       },
       {
         "name": "Ethan",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 2,
         "position": "forward"
       },
       {
         "name": "Gavin",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 2,
         "position": "forward"
       },   
       {
         "name": "Ryan",
-        "team": "black",
+        "team": "home",
         "goals": 1,
         "assists": 2,
         "position": "forward"
@@ -114,41 +120,43 @@
   },
   {
     "date": "2026-10-20",
-    "blackHomeScore": 3,
-    "whiteAwayScore": 1,
+    "homeScore": 3,
+    "awayScore": 1,
+    "alternateHomeName": "Puck Stars",
+    "alternateAwayName": "Snow Sharks",
     "note": "Puck Stars vs Snow Sharks, no ref",
     "players": [
       {
         "name": "Angus",
-        "team": "white",
+        "team": "away",
         "goals": 0,
         "assists": 0,
         "position": "forward"
       },
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 1,
         "assists": 0,
         "position": "forward"
       },
       {
         "name": "Ethan",
-        "team": "black",
+        "team": "home",
         "goals": 1,
         "assists": 0,
         "position": "forward"
       },
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0,
         "position": "forward"
       },   
       {
         "name": "Ryan",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0,
         "position": "defense"

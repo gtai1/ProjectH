@@ -1,18 +1,18 @@
 [
   {
     "date": "",
-    "blackHomeScore": 4,
-    "whiteAwayScore": 8,
+    "homeScore": 4,
+    "awayScore": 8,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -21,18 +21,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 3,
-    "whiteAwayScore": 4,
+    "homeScore": 3,
+    "awayScore": 4,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -41,18 +41,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 2,
-    "whiteAwayScore": 3,
+    "homeScore": 2,
+    "awayScore": 3,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -61,18 +61,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 2,
-    "whiteAwayScore": 2,
+    "homeScore": 2,
+    "awayScore": 2,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -81,18 +81,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 5,
-    "whiteAwayScore": 3,
+    "homeScore": 5,
+    "awayScore": 3,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -101,18 +101,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 3,
-    "whiteAwayScore": 4,
+    "homeScore": 3,
+    "awayScore": 4,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -121,18 +121,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 2,
-    "whiteAwayScore": 0,
+    "homeScore": 2,
+    "awayScore": 0,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -141,18 +141,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 1,
-    "whiteAwayScore": 4,
+    "homeScore": 1,
+    "awayScore": 4,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -161,18 +161,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 1,
-    "whiteAwayScore": 3,
+    "homeScore": 1,
+    "awayScore": 3,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -181,18 +181,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 5,
-    "whiteAwayScore": 3,
+    "homeScore": 5,
+    "awayScore": 3,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -201,18 +201,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 0,
-    "whiteAwayScore": 5,
+    "homeScore": 0,
+    "awayScore": 5,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -221,18 +221,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 2,
-    "whiteAwayScore": 3,
+    "homeScore": 2,
+    "awayScore": 3,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -241,18 +241,18 @@
 
   {
     "date": "",
-    "blackHomeScore": 5,
-    "whiteAwayScore": 2,
+    "homeScore": 5,
+    "awayScore": 2,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 11,
         "assists": 0
       }, 
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 7,
         "assists": 0
       }
@@ -261,12 +261,12 @@
 
   {
     "date": "",
-    "blackHomeScore": 2,
-    "whiteAwayScore": 5,
+    "homeScore": 2,
+    "awayScore": 5,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -275,12 +275,12 @@
 
   {
     "date": "",
-    "blackHomeScore": 1,
-    "whiteAwayScore": 1,
+    "homeScore": 1,
+    "awayScore": 1,
     "players": [
       {
         "name": "Dom",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -289,12 +289,12 @@
 
   {
     "date": "",
-    "blackHomeScore": 5,
-    "whiteAwayScore": 2,
+    "homeScore": 5,
+    "awayScore": 2,
     "players": [
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -303,12 +303,12 @@
 
   {
     "date": "",
-    "blackHomeScore": 2,
-    "whiteAwayScore": 1,
+    "homeScore": 2,
+    "awayScore": 1,
     "players": [
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }
@@ -317,12 +317,12 @@
 
   {
     "date": "",
-    "blackHomeScore": 4,
-    "whiteAwayScore": 2,
+    "homeScore": 4,
+    "awayScore": 2,
     "players": [
       {
         "name": "Gavin",
-        "team": "black",
+        "team": "home",
         "goals": 0,
         "assists": 0
       }

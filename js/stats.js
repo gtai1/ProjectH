@@ -48,12 +48,12 @@ export async function loadGoals(id) {
         let goalsAgainst;
 
         // Determine player's team's score
-        if (player.team === "black") {
-          goalsFor = game.blackHomeScore;
-          goalsAgainst = game.whiteAwayScore;
+        if (player.team === "home") {
+          goalsFor = game.homeScore;
+          goalsAgainst = game.awayScore;
         } else {
-          goalsFor = game.whiteAwayScore;
-          goalsAgainst = game.blackHomeScore;
+          goalsFor = game.awayScore;
+          goalsAgainst = game.homeScore;
         }
 
         // Goals for and against

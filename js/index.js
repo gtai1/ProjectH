@@ -152,27 +152,29 @@ export async function loadGameNews() {
           </span>
       `;
       
-      const whiteScorers = scorers
-          .filter(player => player.team[0].toUpperCase() === "W")
+      const awayScorers = scorers
+          .filter(player => player.team === "away")
           .map(formatPlayer)
           .join("");
       
-      const blackScorers = scorers
-          .filter(player => player.team[0].toUpperCase() === "B")
+      const homeScorers = scorers
+          .filter(player => player.team === "home")
           .map(formatPlayer)
           .join("");
       
-      const playerGoals = (whiteScorers || blackScorers) ? `
+      const playerGoals = (awayScorers || homeScorers) ? `
           <div class="news-scorers">
               <div class="news-scorer-team">
-                  <span class="news-scorer-label">TEAM WHITE</span>
-                  <div class="news-scorer-list">${whiteScorers}</div>
+                  <span class="news-scorer-label">${game.alternateAwayName ? game.alternateAwayName.toUpperCase() : 'TEAM AWAY'}</span>
+                  <div class="news-scorer-list">${awayScorers}</div>
+              </div>
+
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label">${game.alternateHomeName ? game.alternateHomeName.toUpperCase() : 'TEAM HOME'}</span>
+                  <div class="news-scorer-list">${homeScorers}</div>
               </div>
       
-              <div class="news-scorer-team">
-                  <span class="news-scorer-label">TEAM BLACK</span>
-                  <div class="news-scorer-list">${blackScorers}</div>
-              </div>
+ 
           </div>
       ` : "";
 
@@ -192,18 +194,18 @@ export async function loadGameNews() {
               <div class="home-team-info">
                 <img src="./icons/white-jersey.svg"
                      alt="White jersey" width="25" height="25">
-                <span class="home-team-name">Team White</span>
+                <span class="home-team-name">${game.alternateAwayName ? game.alternateAwayName : 'Team Away'}</span>
               </div>
-              <span class="home-team-score">${game.whiteAwayScore}</span>
+              <span class="home-team-score">${game.awayScore}</span>
             </div>
 
             <div class="home-score-row">
               <div class="home-team-info">
                 <img src="./icons/black-jersey.svg"
                      alt="Black jersey" width="25" height="25">
-                <span class="home-team-name">Team Black</span>
+                <span class="home-team-name">${game.alternateHomeName ? game.alternateHomeName : 'Team Home'}</span>
               </div>
-              <span class="home-team-score">${game.blackHomeScore}</span>
+              <span class="home-team-score">${game.homeScore}</span>
             </div>
 
           </div>

@@ -36,31 +36,31 @@ export async function loadScores() {
       `;
 
       // Separate players by team
-      const whiteScorers = scorers
-        .filter((player) => player.team?.[0]?.toUpperCase() === "W")
+      const awayScorers = scorers
+        .filter((player) => player.team === "away")
         .map(formatPlayer)
         .join("");
 
-      const blackScorers = scorers
-        .filter((player) => player.team?.[0]?.toUpperCase() === "B")
+      const homeScorers = scorers
+        .filter((player) => player.team === "home")
         .map(formatPlayer)
         .join("");
 
-      const playerStats = whiteScorers || blackScorers
+      const playerStats = awayScorers || homeScorers
         ? `
           <div class="score-details">
             <div class="score-scorers">
               <div class="score-scorer-team">
-                <span class="score-scorer-label">TEAM WHITE</span>
+                <span class="score-scorer-label">${game.alternateAwayName ? game.alternateAwayName.toUpperCase() : 'TEAM AWAY'}</span>
                 <div class="score-scorer-list">
-                  ${whiteScorers}
+                  ${awayScorers}
                 </div>
               </div>
 
               <div class="score-scorer-team">
-                <span class="score-scorer-label">TEAM BLACK</span>
+                <span class="score-scorer-label">${game.alternateHomeName ? game.alternateHomeName.toUpperCase() : 'TEAM HOME'}</span>
                 <div class="score-scorer-list">
-                  ${blackScorers}
+                  ${homeScorers}
                 </div>
               </div>
             </div>
@@ -75,27 +75,27 @@ export async function loadScores() {
 
           <div class="score">
             <div class="team-away">
-              <span class="team-name">White</span>
+              <span class="team-name">${game.alternateAwayName ? game.alternateAwayName : 'Team Away'}</span>
               <img
                 src="../icons/white-jersey.svg"
                 alt="White jersey"
                 width="25"
                 height="25"
               />
-              <span class="team-score">${game.whiteAwayScore}</span>
+              <span class="team-score">${game.awayScore}</span>
             </div>
 
             <span class="vs">@</span>
 
             <div class="team-home">
-              <span class="team-score">${game.blackHomeScore}</span>
+              <span class="team-score">${game.homeScore}</span>
               <img
                 src="../icons/black-jersey.svg"
                 alt="Black jersey"
                 width="25"
                 height="25"
               />
-              <span class="team-name">Black</span>
+              <span class="team-name">${game.alternateHomeName ? game.alternateHomeName : 'Team Home'}</span>
             </div>
           </div>
 
