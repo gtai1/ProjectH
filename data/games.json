@@ -71,7 +71,7 @@
     "date": "2026-10-17",
     "blackHomeScore": 8,
     "whiteAwayScore": 9,
-    "note": "Orleans, no referee",
+    "note": "Orleans, no ref",
     "players": [
       {
         "name": "Dom",
@@ -96,6 +96,44 @@
         "team": "black",
         "goals": 1,
         "assists": 2
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "blackHomeScore": 3,
+    "whiteAwayScore": 1,
+    "note": "stars vs sharks, no ref",
+    "players": [
+      {
+        "name": "Angus",
+        "team": "white",
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "name": "Dom",
+        "team": "black",
+        "goals": 1,
+        "assists": 0
+      },
+      {
+        "name": "Ethan",
+        "team": "black",
+        "goals": 1,
+        "assists": 0
+      },
+      {
+        "name": "Gavin",
+        "team": "black",
+        "goals": 0,
+        "assists": 0
+      },   
+      {
+        "name": "Ryan",
+        "team": "black",
+        "goals": 0,
+        "assists": 0
       }
     ]
   }
