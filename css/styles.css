@@ -88,7 +88,7 @@ nav ul li a.active {
             rgba(13, 27, 42, 0.7),
             rgba(13, 27, 42, 0.7)
         ),
-        url('../images/hero.jpg')
+        url('./images/hero.jpg')
         no-repeat center center / cover;
 
     height: 60vh;
