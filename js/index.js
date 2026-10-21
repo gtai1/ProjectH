@@ -87,6 +87,10 @@ export async function loadPlayerStats() {
         row.innerHTML = `
                     <td><strong>${player.name}</strong><img src="./icons/ice-cube.png" alt="fire" width="15" height="15" /></td>
                 `;
+      } else if (currentPlayerStreak.currentUnluckyStreak = 2 || currentPlayerStreak.currentGoalStreak = 2) {
+        row.innerHTML = `
+                    <td><strong>${player.name}</strong><img src="./icons/eyes.png" alt="fire" width="15" height="15" /></td>
+                `;
       } else {
         row.innerHTML = `
                     <td><strong>${player.name}</strong></td>
