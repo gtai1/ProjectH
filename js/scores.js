@@ -17,7 +17,7 @@ export async function loadScores() {
 
       // Sort players by goals, then assists
       const scorers = game.players
-        .filter((player) => player.goals > 0 || player.assists > 0)
+        // .filter((player) => player.goals > 0 || player.assists > 0)
         .sort(
           (a, b) =>
             b.goals - a.goals || b.assists - a.assists
