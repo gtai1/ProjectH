@@ -81,15 +81,15 @@ export async function loadPlayerStats() {
 
       if (currentPlayerStreak.currentGoalStreak >= 3) {
         row.innerHTML = `
-                    <td><strong>${player.name}</strong><img src="./icons/fire.png" alt="fire" width="15" height="15" /></td>
+                    <td><strong>${player.name}</strong><img src="./icons/fire.png" alt="fire" title="Goal streak, 3 or more games" width="15" height="15" /></td>
                 `;
       } else if (currentPlayerStreak.currentUnluckyStreak >= 3) {
         row.innerHTML = `
-                    <td><strong>${player.name}</strong><img src="./icons/ice-cube.png" alt="ice-cube" width="15" height="15" /></td>
+                    <td><strong>${player.name}</strong><img src="./icons/ice-cube.png" alt="ice-cube" title="No goal streak, 3 or more game" width="15" height="15" /></td>
                 `;
       } else if (currentPlayerStreak.currentUnluckyStreak == 2 || currentPlayerStreak.currentGoalStreak == 2) {
         row.innerHTML = `
-                    <td><strong>${player.name}</strong><img src="./icons/eyes.png" alt="eyes" width="15" height="15" /></td>
+                    <td><strong>${player.name}</strong><img src="./icons/eyes.png" alt="eyes" title="One game away from a streak" width="15" height="15" /></td>
                 `;
       } else {
         row.innerHTML = `
