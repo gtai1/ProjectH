@@ -225,6 +225,12 @@ nav ul li a.active {
     margin-top: 15px;
 }
 
+@media (max-width: 450px) {
+    .news-card .news-scorers {
+        grid-template-columns: 1fr;
+    }
+}
+
 .news-card .news-scorer-team {
     min-width: 0;
 }
@@ -740,6 +746,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+}
+
+@media (max-width: 450px) {
+    .score-card .score-scorers {
+        grid-template-columns: 1fr;
+    }
 }
 
 .score-card .score-scorer-team {
