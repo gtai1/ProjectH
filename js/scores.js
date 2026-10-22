@@ -27,7 +27,7 @@ export async function loadScores() {
       const formatPlayer = (player) => `
         <span class="score-player-stat">
           <div>
-            <strong>${player.name}</strong> ${player.position === 'forward' ? '<img src="../icons/letter-f.png" alt="f" title="Forward" width="10" height="10" />' : player.position === 'defense' ? '<img src="../icons/letter-d.png" alt="d" title="Defense" width="10" height="10" />' : player.position === 'goalie' ? '<img src="../icons/letter-g.png" alt="g" title="Goalie" width="10" height="10" />' : ''}
+            ${player.position === 'forward' ? '<img src="../icons/letter-f.png" alt="f" title="Forward" width="10" height="10" />' : player.position === 'defense' ? '<img src="../icons/letter-d.png" alt="d" title="Defense" width="10" height="10" />' : player.position === 'goalie' ? '<img src="../icons/letter-g.png" alt="g" title="Goalie" width="10" height="10" />' : ''} <strong>${player.name}</strong>
           </div>
           <span>
             ${player.goals}G · ${player.assists}A · ${player.goals + player.assists}P
