@@ -1,5 +1,5 @@
 import { loadPlayerStats, loadGameNews } from "./index.js";
-import { loadPlayers } from "./players.js";
+import { loadPlayers, loadPlayerPage } from "./players.js";
 import { loadGoals } from "./stats.js";
 import { loadScores } from "./scores.js";
 
@@ -15,6 +15,10 @@ if (document.getElementById("player-stats-body")) {
 // players/index.html
 if (document.getElementById("players-grid")) {
     loadPlayers();
+}
+
+if (document.getElementById("player-name")) {
+    loadPlayerPage();
 }
 
 // stats/index.html

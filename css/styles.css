@@ -409,6 +409,16 @@ footer {
     padding: 80px 20px;
 }
 
+.player-page-header {
+    background-image:
+        linear-gradient(
+            rgba(13, 27, 42, 0.72),
+            rgba(13, 27, 42, 0.72)
+        ),
+        var(--player-header-image);
+    background-position: center top;
+}
+
 .page-header h2 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -460,6 +470,17 @@ footer {
 .player-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.player-profile-card {
+    max-width: 720px;
+    margin: 28px auto 36px;
+    cursor: default;
+}
+
+.player-profile-card:hover {
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .player-image {
@@ -649,6 +670,81 @@ footer {
 
 #scores-data {
     width: 100%;
+}
+
+.player-games-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.player-games-section h4 {
+    border-bottom: 3px solid #0d1b2a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#player-games {
+    display: grid;
+    gap: 12px;
+}
+
+.player-game-card {
+    padding: 16px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.player-game-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.player-game-score {
+    text-align: right;
+}
+
+.player-game-stats {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    padding-top: 12px;
+}
+
+.player-game-stats div {
+    display: grid;
+    gap: 4px;
+}
+
+.player-game-stats span {
+    color: #666;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .player-game-card {
+        padding: 14px;
+    }
+
+    .player-game-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .player-game-score {
+        text-align: left;
+    }
 }
 
 .score-card {

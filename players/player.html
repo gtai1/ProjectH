@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hockey Hub - ${playerName}</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Header & Navigation
+    ========================== -->
+    <div id="navbar"></div>
+
+    <!-- =========================
+        Page Header
+    ========================== -->
+    <section class="page-header player-page-header">
+
+        <h2 id="player-name"></h2>
+
+    </section>
+
+    <!-- =========================
+         Main Content
+    ========================== -->
+    <main class="">
+
+        <div id="player-data" class=""> <!-- Player data will be generated here --> </div>
+
+    </main>
+
+    <div id="footer"></div>
+
+</body>
+    
+<script>
+    fetch("../components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+
+            const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+
+            document.querySelectorAll("#navbar nav a").forEach(link => {
+                const linkPath = new URL(link.href).pathname.replace(/\/+$/, "") || "/";
+
+                if (linkPath === currentPath) {
+                    link.classList.add("active");
+                }
+            });
+        });
+</script>
+
+<script>
+    fetch("../components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+</script>
+
+<script type="module" src="../js/main.js"></script>
+    
+</html>
