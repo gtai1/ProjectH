@@ -184,6 +184,70 @@ export async function loadPlayerPage() {
     profileCard.appendChild(playerInfo);
     dataElement.replaceChildren(profileCard);
 
+    const recordsSection = document.createElement("section");
+    recordsSection.classList.add("player-records-section");
+    recordsSection.setAttribute("aria-labelledby", "player-records-heading");
+
+    const recordsHeading = document.createElement("h4");
+    recordsHeading.id = "player-records-heading";
+    recordsHeading.textContent = "Best Games";
+
+    const recordsGrid = document.createElement("div");
+    recordsGrid.classList.add("player-records-grid");
+
+    [
+      {
+        label: "Most Points",
+        getValue: (stats) => (stats.goals ?? 0) + (stats.assists ?? 0),
+        statLabel: "points",
+      },
+      {
+        label: "Most Goals",
+        getValue: (stats) => stats.goals ?? 0,
+        statLabel: "goals",
+      },
+      {
+        label: "Most Assists",
+        getValue: (stats) => stats.assists ?? 0,
+        statLabel: "assists",
+      },
+    ].forEach(({ label, getValue, statLabel }) => {
+      const recordCard = document.createElement("article");
+      recordCard.classList.add("player-record-card");
+
+      const recordTitle = document.createElement("h5");
+      recordTitle.textContent = label;
+      recordCard.appendChild(recordTitle);
+
+      if (playerAppearances.length === 0) {
+        const noGames = document.createElement("p");
+        noGames.textContent = "No games recorded";
+        recordCard.appendChild(noGames);
+      } else {
+        const record = playerAppearances.reduce((best, appearance) =>
+          getValue(appearance.stats) > getValue(best.stats) ? appearance : best,
+        );
+        const recordValue = document.createElement("strong");
+        recordValue.classList.add("player-record-value");
+        recordValue.textContent = `${getValue(record.stats)} ${statLabel}`;
+
+        const recordGame = document.createElement("p");
+        recordGame.classList.add("player-record-game");
+        const date = new Date(`${record.game.date}T00:00:00`).toLocaleDateString(
+          undefined,
+          { year: "numeric", month: "short", day: "numeric" },
+        );
+        const awayTeam = record.game.alternateAwayName || "Team Away";
+        const homeTeam = record.game.alternateHomeName || "Team Home";
+        recordGame.textContent = `${date} · ${awayTeam} ${record.game.awayScore} - ${record.game.homeScore} ${homeTeam}`;
+
+        recordCard.append(recordValue, recordGame);
+      }
+
+      recordsGrid.appendChild(recordCard);
+    });
+
+    recordsSection.append(recordsHeading, recordsGrid);
     document.querySelector(".player-games-section")?.remove();
 
     const gamesSection = document.createElement("section");
@@ -198,7 +262,8 @@ export async function loadPlayerPage() {
     gamesElement.id = "player-games";
 
     gamesSection.append(gamesHeading, gamesElement);
-    dataElement.insertAdjacentElement("afterend", gamesSection);
+    dataElement.insertAdjacentElement("afterend", recordsSection);
+    recordsSection.insertAdjacentElement("afterend", gamesSection);
 
     gamesElement.replaceChildren();
     playerAppearances.forEach(({ game, stats }) => {
@@ -232,7 +297,7 @@ export async function loadPlayerPage() {
 
       [
         ["Team", playerTeam],
-        ["Position", stats.position ?? "—"],
+        ["Position", stats.position ? stats.position[0].toUpperCase() + stats.position.slice(1) : "—"],
         ["Goals", stats.goals ?? 0],
         ["Assists", stats.assists ?? 0],
         ["Points", points],

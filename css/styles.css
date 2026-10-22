@@ -690,6 +690,49 @@ footer {
     gap: 12px;
 }
 
+.player-records-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 24px auto 40px;
+    padding: 0 20px;
+}
+
+.player-records-section h4 {
+    border-bottom: 3px solid #0d1b2a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.player-records-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.player-record-card {
+    min-width: 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-record-card h5 {
+    margin: 0 0 12px;
+    color: #0d1b2a;
+}
+
+.player-record-value {
+    display: block;
+    font-size: 1.5rem;
+    color: #e63946;
+}
+
+.player-record-game {
+    margin: 8px 0 0;
+    color: #666;
+}
+
 .player-game-card {
     padding: 16px 20px;
     background: #fff;
@@ -744,6 +787,12 @@ footer {
 
     .player-game-score {
         text-align: left;
+    }
+}
+
+@media (max-width: 500px) {
+    .player-records-grid {
+        grid-template-columns: 1fr;
     }
 }
 
