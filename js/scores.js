@@ -76,12 +76,7 @@ export async function loadScores() {
           <div class="score">
             <div class="team-away">
               <span class="team-name">${game.alternateAwayName ? game.alternateAwayName : 'Team Away'}</span>
-              <img
-                src="../icons/white-jersey.svg"
-                alt="White jersey"
-                width="25"
-                height="25"
-              />
+              <img src="../icons/${game.alternateAwayColour ? game.alternateAwayColour : 'white'}-jersey.png" alt="Away jersey" width="25" height="25">
               <span class="team-score">${game.awayScore}</span>
             </div>
 
@@ -89,12 +84,7 @@ export async function loadScores() {
 
             <div class="team-home">
               <span class="team-score">${game.homeScore}</span>
-              <img
-                src="../icons/black-jersey.svg"
-                alt="Black jersey"
-                width="25"
-                height="25"
-              />
+              <img src="../icons/${game.alternateHomeColour ? game.alternateHomeColour : 'black'}-jersey.png" alt="Home jersey" width="25" height="25">
               <span class="team-name">${game.alternateHomeName ? game.alternateHomeName : 'Team Home'}</span>
             </div>
           </div>

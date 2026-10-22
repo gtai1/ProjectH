@@ -192,8 +192,7 @@ export async function loadGameNews() {
 
             <div class="home-score-row">
               <div class="home-team-info">
-                <img src="./icons/white-jersey.svg"
-                     alt="White jersey" width="25" height="25">
+                <img src="./icons/${game.alternateAwayColour ? game.alternateAwayColour : 'white'}-jersey.png" alt="Away jersey" width="25" height="25">
                 <span class="home-team-name">${game.alternateAwayName ? game.alternateAwayName : 'Team Away'}</span>
               </div>
               <span class="home-team-score">${game.awayScore}</span>
@@ -201,8 +200,7 @@ export async function loadGameNews() {
 
             <div class="home-score-row">
               <div class="home-team-info">
-                <img src="./icons/black-jersey.svg"
-                     alt="Black jersey" width="25" height="25">
+                <img src="./icons/${game.alternateHomeColour ? game.alternateHomeColour : 'black'}-jersey.png" alt="Home jersey" width="25" height="25">
                 <span class="home-team-name">${game.alternateHomeName ? game.alternateHomeName : 'Team Home'}</span>
               </div>
               <span class="home-team-score">${game.homeScore}</span>
