@@ -124,8 +124,8 @@
     "awayScore": 1,
     "alternateHomeName": "Puck Stars",
     "alternateAwayName": "Snow Sharks",
-    "alternateHomeColour": "blue",
-    "alternateAwayColour": "red",
+    "alternateHomeColour": "red",
+    "alternateAwayColour": "blue",
     "note": "5v5 game of 3v3 alumni teams, no ref",
     "players": [
       {
