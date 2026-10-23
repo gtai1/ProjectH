@@ -177,6 +177,8 @@ export async function loadGameNews() {
  
           </div>
       ` : "";
+      const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : "";
+      const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : "";
 
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
@@ -190,7 +192,7 @@ export async function loadGameNews() {
 
           <div class="home-score">
 
-            <div class="home-score-row">
+            <div class="home-score-row${awayWinnerClass}">
               <div class="home-team-info">
                 <img src="./icons/${game.alternateAwayColour ? game.alternateAwayColour : 'white'}-jersey.png" alt="Away jersey" width="25" height="25">
                 <span class="home-team-name">${game.alternateAwayName ? game.alternateAwayName : 'Team Away'}</span>
@@ -198,7 +200,7 @@ export async function loadGameNews() {
               <span class="home-team-score">${game.awayScore}</span>
             </div>
 
-            <div class="home-score-row">
+            <div class="home-score-row${homeWinnerClass}">
               <div class="home-team-info">
                 <img src="./icons/${game.alternateHomeColour ? game.alternateHomeColour : 'black'}-jersey.png" alt="Home jersey" width="25" height="25">
                 <span class="home-team-name">${game.alternateHomeName ? game.alternateHomeName : 'Team Home'}</span>
