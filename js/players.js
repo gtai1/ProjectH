@@ -288,9 +288,31 @@ export async function loadPlayerPage() {
 
       const gameScore = document.createElement("strong");
       gameScore.classList.add("player-game-score");
+
+      const playerScore = stats.team === "home" ? game.homeScore : game.awayScore;
+      const opponentScore = stats.team === "home" ? game.awayScore : game.homeScore;
+
       gameScore.textContent = `${awayTeam} ${game.awayScore} - ${game.homeScore} ${homeTeam}`;
 
-      gameHeader.append(gameDate, gameScore);
+      const resultImage = document.createElement("img");
+      resultImage.src =
+        playerScore > opponentScore
+          ? "../icons/green-circle.png"
+          : playerScore < opponentScore
+            ? "../icons/red-circle.png"
+            : "../icons/grey-circle.png";
+      resultImage.alt =
+        playerScore > opponentScore
+          ? "Win"
+          : playerScore < opponentScore
+            ? "Loss"
+            : "Tie";
+      resultImage.width = 15;
+      resultImage.height = 15;
+
+      gameScore.prepend(resultImage, " ");
+
+      gameHeader.append(gameScore, gameDate);
 
       const gameStats = document.createElement("div");
       gameStats.classList.add("player-game-stats");

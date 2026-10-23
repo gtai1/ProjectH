@@ -22,16 +22,21 @@
     ========================== -->
     <section class="page-header player-page-header">
 
-        <h2 id="player-name"></h2>
+        <span class="player-header-content">
+            <a href="./" class="page-header-back">
+                <img src="../icons/left-chevron.png" alt="Back to players" width="30" height="30">
+            </a>
+
+            <h2 id="player-name"></h2>
+        </span>
 
     </section>
 
     <!-- =========================
          Main Content
     ========================== -->
-    <main class="">
-
-        <div id="player-data" class=""> <!-- Player data will be generated here --> </div>
+    <main>
+        <div id="player-data"> <!-- Player data will be generated here --> </div>
 
     </main>
 
@@ -50,7 +55,10 @@
             document.querySelectorAll("#navbar nav a").forEach(link => {
                 const linkPath = new URL(link.href).pathname.replace(/\/+$/, "") || "/";
 
-                if (linkPath === currentPath) {
+                if (
+                    linkPath === currentPath ||
+                    (currentPath.endsWith("/players/player.html") && linkPath.endsWith("/players"))
+                ) {
                     link.classList.add("active");
                 }
             });

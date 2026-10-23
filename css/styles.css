@@ -395,6 +395,7 @@ footer {
     Page Header
 ========================== */
 .page-header {
+    position: relative;
     background:
         linear-gradient(
             rgba(13, 27, 42, 0.85),
@@ -407,6 +408,34 @@ footer {
     text-align: center;
 
     padding: 80px 20px;
+}
+
+.player-header-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.page-header-back {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+}
+
+.page-header-back img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.player-header-content h2 {
+    margin-bottom: 0;
 }
 
 .player-page-header {
@@ -575,6 +604,10 @@ footer {
 
     .players-grid {
         grid-template-columns: 1fr;
+    }
+
+    .player-profile-card {
+        margin: 24px 20px 40px;
     }
 }
 
@@ -757,6 +790,23 @@ footer {
 
 .player-game-score {
     text-align: right;
+}
+
+.player-game-result {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 8px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.player-game-result.is-win {
+    background-color: #2e7d32;
+}
+
+.player-game-result.is-loss {
+    background-color: #d32f2f;
 }
 
 .player-game-stats {
