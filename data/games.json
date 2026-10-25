@@ -164,5 +164,35 @@
         "position": "defense"
       }
     ]
+  },
+  {
+    "date": "2026-10-24",
+    "homeScore": 8,
+    "awayScore": 3,
+    "alternateHomeName": "Team Black",
+    "alternateAwayName": "Team White",
+    "players": [
+      {
+        "name": "Dom",
+        "team": "home",
+        "goals": 5,
+        "assists": 0,
+        "position": "forward"
+      },
+      {
+        "name": "Ethan",
+        "team": "home",
+        "goals": 0,
+        "assists": 4,
+        "position": "forward"
+      },
+      {
+        "name": "Gavin",
+        "team": "home",
+        "goals": 1,
+        "assists": 2,
+        "position": "forward"
+      }
+    ]
   }
 ]
