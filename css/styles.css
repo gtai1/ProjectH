@@ -501,12 +501,15 @@ footer {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Flippable cards (right click to flip) */
+/* Flippable cards (right click or swipe to flip) */
 .player-card-flippable {
   background: transparent;
   overflow: visible;
   box-shadow: none;
   perspective: 1000px;
+
+  /* Let the page scroll vertically but leave horizontal swipes to the card */
+  touch-action: pan-y;
 }
 
 .player-card-flippable:hover {
@@ -533,7 +536,34 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transition: box-shadow 0.3s ease;
+
+  /* A face only becomes hidden once the flip has finished (see below) */
+  transition:
+    box-shadow 0.3s ease,
+    visibility 0s linear 0.6s;
+}
+
+/* The face being revealed becomes visible straight away */
+.player-card-front,
+.player-card-flippable.is-flipped .player-card-back {
+  transition-delay: 0s, 0s;
+}
+
+.player-card-flippable.is-flipped .player-card-front {
+  transition-delay: 0s, 0.6s;
+}
+
+/*
+  Explicitly hide the face that isn't showing. iOS long press previews draw the card
+  flat and ignore backface-visibility, which made the back show through mirrored.
+*/
+.player-card-back,
+.player-card-flippable.is-flipped .player-card-front {
+  visibility: hidden;
+}
+
+.player-card-flippable.is-flipped .player-card-back {
+  visibility: visible;
 }
 
 .player-card-flippable:hover .player-card-face {
@@ -652,7 +682,8 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .player-card-inner {
+  .player-card-inner,
+  .player-card-face {
     transition: none;
   }
 }

@@ -104,10 +104,69 @@ export async function loadPlayers() {
       const playerCard = document.createElement("article");
       playerCard.classList.add("player-card", "player-card-flippable");
 
-      // Right click flips the card instead of opening the context menu
+      // Right click flips the card on desktop
       playerCard.addEventListener("contextmenu", (event) => {
+        // Leave long presses on touch screens alone, swipes handle those
+        if (touchActive) return;
+
         event.preventDefault();
         playerCard.classList.toggle("is-flipped");
+      });
+
+      // Swiping left or right flips the card on touch screens
+      const SWIPE_DISTANCE_PX = 50;
+      const DIRECTION_LOCK_PX = 10;
+      let touchActive = false;
+      let touchStart = null;
+      let swipeDirection = null;
+      let didSwipe = false;
+
+      playerCard.addEventListener(
+        "touchstart",
+        (event) => {
+          touchActive = true;
+          swipeDirection = null;
+          didSwipe = false;
+          touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        },
+        { passive: true },
+      );
+
+      playerCard.addEventListener(
+        "touchmove",
+        (event) => {
+          if (didSwipe || event.touches.length > 1) return;
+
+          const deltaX = event.touches[0].clientX - touchStart.x;
+          const deltaY = event.touches[0].clientY - touchStart.y;
+
+          // Decide once per gesture whether this is a horizontal swipe or a vertical scroll
+          if (!swipeDirection) {
+            if (Math.abs(deltaX) < DIRECTION_LOCK_PX && Math.abs(deltaY) < DIRECTION_LOCK_PX) return;
+            swipeDirection = Math.abs(deltaX) > Math.abs(deltaY) ? "horizontal" : "vertical";
+          }
+
+          if (swipeDirection === "horizontal" && Math.abs(deltaX) > SWIPE_DISTANCE_PX) {
+            didSwipe = true;
+            playerCard.classList.toggle("is-flipped");
+          }
+        },
+        { passive: true },
+      );
+
+      const endTouch = () => {
+        touchActive = false;
+      };
+
+      playerCard.addEventListener("touchend", endTouch);
+      playerCard.addEventListener("touchcancel", endTouch);
+
+      // Stop a swipe from also opening the player page
+      playerLink.addEventListener("click", (event) => {
+        if (didSwipe) {
+          event.preventDefault();
+          didSwipe = false;
+        }
       });
 
       const imagePath = `../images/${player.image}`;
