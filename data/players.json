@@ -1,32 +1,127 @@
 [
   {
+    "handedness": "Left",
     "name": "Angus",
     "number": 22,
     "position": "Defense",
-    "image": "22.jpg"
+    "image": "22.jpg",
+    "scouting": {
+      "offensiveProfile": [
+        { "label": "Finishing", "value": 99 },
+        { "label": "Playmaking", "value": 99 },
+        { "label": "Shot volume", "value": 99 },
+        { "label": "Consistency", "value": 1 }
+      ],
+      "notes": [
+        {
+          "type": "strength",
+          "title": "Lockdown defender"
+        },
+        {
+          "type": "tendency",
+          "title": "Pass first"
+        }
+      ]
+    }
   },
   {
+    "handedness": "Left",
     "name": "Dom",
     "number": 14,
     "position": "Right Wing",
-    "image": "14.jpg"
+    "image": "14.jpg",
+    "scouting": {
+      "offensiveProfile": [
+        { "label": "Finishing", "value": 99 },
+        { "label": "Playmaking", "value": 99 },
+        { "label": "Shot volume", "value": 1 },
+        { "label": "Consistency", "value": 50 }
+      ],
+      "notes": [
+        {
+          "type": "strength",
+          "title": "Playmaker"
+        },
+        {
+          "type": "tendency",
+          "title": "Drop Pass"
+        }
+      ]
+    }
   },
   {
+    "handedness": "Left",
     "name": "Ethan",
     "number": 5,
     "position": "Center",
-    "image": "5.jpg"
+    "image": "5.jpg",
+    "scouting": {
+      "offensiveProfile": [
+        { "label": "Finishing", "value": "50" },
+        { "label": "Playmaking", "value": "50" },
+        { "label": "Shot volume", "value": "50" },
+        { "label": "Consistency", "value": "50" }
+      ],
+      "notes": [
+        {
+          "type": "strength",
+          "title": "Pick Pocket"
+        },
+        {
+          "type": "tendency",
+          "title": "Counter Attacker"
+        }
+      ]
+    }
   },
   {
+    "handedness": "Right",
     "name": "Gavin",
     "number": 7,
     "position": "Left Wing",
-    "image": "7.jpg"
+    "image": "7.jpg",
+    "scouting": {
+      "offensiveProfile": [
+        { "label": "Finishing", "value": 99 },
+        { "label": "Playmaking", "value": 1 },
+        { "label": "Shot volume", "value": 99 },
+        { "label": "Consistency", "value": 50 }
+      ],
+      "notes": [
+        {
+          "type": "strength",
+          "title": "Finishing"
+        },
+        {
+          "type": "tendency",
+          "title": "Waits for pass in Ovi's office"
+        }
+      ]
+    }
   },
   {
+    "handedness": "Left",
     "name": "Ryan",
     "number": 24,
     "position": "Center",
-    "image": "24.jpg"
+    "image": "24.jpg",
+    "scouting": {
+      "offensiveProfile": [
+        { "label": "Finishing", "value": 99 },
+        { "label": "Playmaking", "value": 50 },
+        { "label": "Shot volume", "value": 30 },
+        { "label": "Consistency", "value": 50 }
+      ],
+      "notes": [
+        {
+          "type": "strength",
+          "title": "Streak Scorer"
+        },
+        {
+          "type": "tendency",
+          "title": "Shoots from anywhere"
+        }
+      ]
+    }
   }
 ]

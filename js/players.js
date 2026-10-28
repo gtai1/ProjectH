@@ -1,3 +1,58 @@
+// Icons for scouting note types
+const scoutingNoteIcons = {
+  strength: `<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg>`,
+  tendency: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>`,
+  weakness: `<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="3 7 9 13 13 9 21 17"></polyline><polyline points="15 17 21 17 21 11"></polyline></svg>`,
+};
+
+// Builds the offensive profile and scouting notes for the back of a player card
+function buildScoutingReport(scouting) {
+  if (!scouting) {
+    return `<p class="scouting-empty">No scouting report yet.</p>`;
+  }
+
+  const profile = (scouting.offensiveProfile ?? [])
+    .map(
+      ({ label, value }) => `
+        <div class="scouting-rating">
+            <div class="scouting-rating-label">
+                <span>${label}</span>
+                <span>${value}</span>
+            </div>
+            <div class="scouting-rating-bar">
+                <div class="scouting-rating-fill" style="width: ${value}%"></div>
+            </div>
+        </div>
+      `,
+    )
+    .join("");
+
+  const notes = (scouting.notes ?? [])
+    .map(
+      ({ type, title }) => `
+        <div class="scouting-note scouting-note-${type}">
+            ${scoutingNoteIcons[type] ?? ""}
+            <div>
+                <strong>${type[0].toUpperCase() + type.slice(1)}: ${title}</strong>
+            </div>
+        </div>
+      `,
+    )
+    .join("");
+
+  return `
+    <section class="scouting-section">
+        <h5>Offensive Profile</h5>
+        ${profile}
+    </section>
+
+    <section class="scouting-section">
+        <h5>Scouting Report</h5>
+        ${notes}
+    </section>
+  `;
+}
+
 export async function loadPlayers() {
   try {
     // Load both JSON files
@@ -47,11 +102,21 @@ export async function loadPlayers() {
       playerLink.classList.add("player-card-link");
 
       const playerCard = document.createElement("article");
-      playerCard.classList.add("player-card");
+      playerCard.classList.add("player-card", "player-card-flippable");
+
+      // Right click flips the card instead of opening the context menu
+      playerCard.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        playerCard.classList.toggle("is-flipped");
+      });
 
       const imagePath = `../images/${player.image}`;
 
       playerCard.innerHTML = `
+                  <div class="player-card-inner">
+
+                  <div class="player-card-face player-card-front">
+
                     <div class="player-image">
                         <img src="${imagePath}" alt="${player.name} #${player.number}">
                     </div>
@@ -85,10 +150,25 @@ export async function loadPlayers() {
                                 <strong>${points}</strong>
                                 <span>P</span>
                             </div>
-    
+
                         </div>
-    
+
                     </div>
+
+                  </div>
+
+                  <div class="player-card-face player-card-back">
+
+                    <div class="player-card-back-header">
+                        <h4>${player.name} #${player.number}</h4>
+                        <div class="player-position">${player.position} | Shoots ${player.handedness} </div>
+                    </div>
+
+                    ${buildScoutingReport(player.scouting)}
+
+                  </div>
+
+                  </div>
                 `;
 
       // Add card to the page
@@ -134,14 +214,23 @@ export async function loadPlayerPage() {
 
     const playerGames = playerAppearances.map((appearance) => appearance.stats);
 
-    const goals = playerGames.reduce((total, game) => total + (game.goals ?? 0), 0);
-    const assists = playerGames.reduce((total, game) => total + (game.assists ?? 0), 0);
+    const goals = playerGames.reduce(
+      (total, game) => total + (game.goals ?? 0),
+      0,
+    );
+    const assists = playerGames.reduce(
+      (total, game) => total + (game.assists ?? 0),
+      0,
+    );
 
     nameElement.textContent = `${player.name} #${player.number}`;
     document.title = `Hockey Hub - ${player.name}`;
 
     if (headerElement) {
-      const playerImageUrl = new URL(`../images/${player.image}`, document.baseURI);
+      const playerImageUrl = new URL(
+        `../images/${player.image}`,
+        document.baseURI,
+      );
       headerElement.style.setProperty(
         "--player-header-image",
         `url("${playerImageUrl.href}")`,
@@ -233,10 +322,13 @@ export async function loadPlayerPage() {
 
         const recordGame = document.createElement("p");
         recordGame.classList.add("player-record-game");
-        const date = new Date(`${record.game.date}T00:00:00`).toLocaleDateString(
-          undefined,
-          { year: "numeric", month: "short", day: "numeric" },
-        );
+        const date = new Date(
+          `${record.game.date}T00:00:00`,
+        ).toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
         const awayTeam = record.game.alternateAwayName || "Team Away";
         const homeTeam = record.game.alternateHomeName || "Team Home";
         recordGame.textContent = `${date} · ${awayTeam} ${record.game.awayScore} - ${record.game.homeScore} ${homeTeam}`;
@@ -281,16 +373,21 @@ export async function loadPlayerPage() {
       const gameDate = document.createElement("time");
       gameDate.classList.add("player-game-date");
       gameDate.dateTime = game.date;
-      gameDate.textContent = new Date(`${game.date}T00:00:00`).toLocaleDateString(
-        undefined,
-        { year: "numeric", month: "long", day: "numeric" },
-      );
+      gameDate.textContent = new Date(
+        `${game.date}T00:00:00`,
+      ).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
 
       const gameScore = document.createElement("strong");
       gameScore.classList.add("player-game-score");
 
-      const playerScore = stats.team === "home" ? game.homeScore : game.awayScore;
-      const opponentScore = stats.team === "home" ? game.awayScore : game.homeScore;
+      const playerScore =
+        stats.team === "home" ? game.homeScore : game.awayScore;
+      const opponentScore =
+        stats.team === "home" ? game.awayScore : game.homeScore;
 
       gameScore.textContent = `${awayTeam} ${game.awayScore} - ${game.homeScore} ${homeTeam}`;
 
@@ -319,7 +416,12 @@ export async function loadPlayerPage() {
 
       [
         ["Team", playerTeam],
-        ["Position", stats.position ? stats.position[0].toUpperCase() + stats.position.slice(1) : "—"],
+        [
+          "Position",
+          stats.position
+            ? stats.position[0].toUpperCase() + stats.position.slice(1)
+            : "—",
+        ],
         ["Goals", stats.goals ?? 0],
         ["Assists", stats.assists ?? 0],
         ["Points", points],
