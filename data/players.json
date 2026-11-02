@@ -26,6 +26,31 @@
   },
   {
     "handedness": "Left",
+    "name": "Brandon",
+    "number": 10,
+    "position": "Right Wing",
+    "image": "",
+    "scouting": {
+      "offensiveProfile": [
+        { "label": "Finishing", "value": 99 },
+        { "label": "Playmaking", "value": 99 },
+        { "label": "Shot volume", "value": 50 },
+        { "label": "Consistency", "value": 1 }
+      ],
+      "notes": [
+        {
+          "type": "strength",
+          "title": "Playmaker"
+        },
+        {
+          "type": "tendency",
+          "title": "Drop Pass"
+        }
+      ]
+    }
+  },
+  {
+    "handedness": "Left",
     "name": "Dom",
     "number": 14,
     "position": "Right Wing",
