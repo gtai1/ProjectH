@@ -194,5 +194,56 @@
         "position": "forward"
       }
     ]
+  },
+  {
+    "date": "2026-10-31",
+    "homeScore": 5,
+    "awayScore": 5,
+    "alternateHomeName": "Team Black",
+    "alternateAwayName": "Team White",
+    "players": [
+      {
+        "name": "Angus",
+        "team": "home",
+        "goals": 0,
+        "assists": 0,
+        "position": "defense"
+      },
+      {
+        "name": "Brandon",
+        "team": "home",
+        "goals": 1,
+        "assists": 1,
+        "position": "forward"
+      },
+      {
+        "name": "Dom",
+        "team": "home",
+        "goals": 1,
+        "assists": 1,
+        "position": "forward"
+      },
+      {
+        "name": "Ethan",
+        "team": "home",
+        "goals": 0,
+        "assists": 1,
+        "position": "forward"
+      },
+      {
+        "name": "Gavin",
+        "team": "home",
+        "goals": 1,
+        "assists": 0,
+        "position": "forward"
+      },   
+      {
+        "name": "Ryan",
+        "team": "home",
+        "goals": 0,
+        "assists": 1,
+        "position": "defense"
+      }
+    ]
   }
 ]
