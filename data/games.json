@@ -333,5 +333,45 @@
         "position": "forward"
       }
     ]
+  },
+  {
+    "date": "2026-11-15",
+    "homeScore": 3,
+    "awayScore": 1,
+    "alternateHomeName": "Snow Sharks",
+    "alternateAwayName": "Puck Stars",
+    "alternateHomeColour": "blue",
+    "alternateAwayColour": "red",
+    "note": "2nd 5v5 game of 3v3 alumni teams, no ref",
+    "players": [
+      {
+        "name": "Dom",
+        "team": "away",
+        "goals": 0,
+        "assists": 0,
+        "position": "defense"
+      },
+      {
+        "name": "Ethan",
+        "team": "away",
+        "goals": 0,
+        "assists": 0,
+        "position": "forward"
+      },
+      {
+        "name": "Gavin",
+        "team": "away",
+        "goals": 0,
+        "assists": 0,
+        "position": "forward"
+      },   
+      {
+        "name": "Ryan",
+        "team": "away",
+        "goals": 0,
+        "assists": 0,
+        "position": "defense"
+      }
+    ]
   }
 ]
