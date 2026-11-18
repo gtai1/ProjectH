@@ -1,7 +1,7 @@
 import { loadPlayerStats, loadGameNews } from "./index.js";
 import { loadPlayers, loadPlayerPage } from "./players.js";
 import { loadGoals } from "./stats.js";
-import { loadScores } from "./scores.js";
+import { loadGames, loadGamePage } from "./games.js";
 
 // index.html
 if (document.getElementById("news-container")) {
@@ -38,5 +38,9 @@ if (document.getElementById("stats-body-legacy-2025")) {
 
 // scores/index.html
 if (document.getElementById("scores-data")) {
-    loadScores();
+    loadGames();
+}
+
+if (document.getElementById("game-name")) {
+    loadGamePage();
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hockey Hub - Scores</title>
+    <title>Hockey Hub - ${gameName}</title>
 
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="stylesheet" href="../css/styles.css">
@@ -18,24 +18,25 @@
     <div id="navbar"></div>
 
     <!-- =========================
-         Page Header
+        Page Header
     ========================== -->
-    <section class="page-header">
+    <section class="page-header player-page-header">
 
-        <h2>Scores</h2>
+        <span class="player-header-content">
+            <a href="./" class="page-header-back">
+                <img src="../icons/left-chevron.png" alt="Back to games" width="30" height="30">
+            </a>
+
+            <h2 id="game-name"></h2>
+        </span>
 
     </section>
 
     <!-- =========================
          Main Content
     ========================== -->
-    <main class="scores-container">
-
-        <h3>Scores</h3>
-
-        <div id='scores-data'>
-            <!--auto populate game data dropdowns-->
-        </div>
+    <main>
+        <div id="game-data"> <!-- Game data will be generated here --> </div>
 
     </main>
 
@@ -54,7 +55,10 @@
             document.querySelectorAll("#navbar nav a").forEach(link => {
                 const linkPath = new URL(link.href).pathname.replace(/\/+$/, "") || "/";
 
-                if (linkPath === currentPath) {
+                if (
+                    linkPath === currentPath ||
+                    (currentPath.endsWith("/players/player.html") && linkPath.endsWith("/players"))
+                ) {
                     link.classList.add("active");
                 }
             });

@@ -1033,6 +1033,7 @@ footer {
 }
 
 .score-card {
+  display: block;
   background: #fff;
   border-radius: 12px;
   margin: 0 auto 16px auto;
@@ -1040,6 +1041,8 @@ footer {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 1060px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .score-card:hover {
@@ -1204,4 +1207,8 @@ footer {
   .score-card .score-scorers {
     gap: 12px;
   }
+}
+
+.game-page-card .score-details {
+  display: block;
 }
