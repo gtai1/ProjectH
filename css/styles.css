@@ -1044,6 +1044,27 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Dropdown arrow */
+.score-card {
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.score-card::after {
+   content: "▼";
+   position: absolute;
+   bottom: 6px;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 11px;
+   color: #999;
+   transition: transform 0.2s ease;
+}
+
+.score-card.expanded::after {
+   transform: translateX(-50%) rotate(180deg);
+}
+
 .game-header {
   padding: 20px;
 }
