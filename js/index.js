@@ -177,9 +177,10 @@ export async function loadGameNews() {
  
           </div>
       ` : "";
-      const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : "";
-      const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : "";
 
+      const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : game.awayScore < game.homeScore ? " is-loser" : "";
+      const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : game.homeScore < game.awayScore ? " is-loser" : "";
+      
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
 
