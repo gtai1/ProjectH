@@ -157,6 +157,7 @@ export async function loadGamePage() {
     gameDateElement.classList.add("game-date");
     gameDateElement.dateTime = game.date;
     gameDateElement.textContent = formattedDate;
+    gameDateElement.style.display = "block";
 
     const score = document.createElement("div");
     score.classList.add("score");
