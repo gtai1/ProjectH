@@ -188,17 +188,6 @@ nav ul li a.active {
   width: 100%;
 }
 
-.news-card .home-score-row.is-winner::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  width: 5px;
-  height: 25px;
-  background-color: #2e7d32;
-  transform: translateY(-50%);
-}
-
 .news-card .home-team-info {
   display: flex;
   align-items: center;
