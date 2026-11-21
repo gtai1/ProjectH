@@ -188,6 +188,10 @@ nav ul li a.active {
   width: 100%;
 }
 
+.news-card .home-score-row.is-loser {
+    opacity: 0.4;
+}
+
 .news-card .home-team-info {
   display: flex;
   align-items: center;
