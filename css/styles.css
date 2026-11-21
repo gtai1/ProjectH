@@ -172,6 +172,7 @@ nav ul li a.active {
   font-size: 1rem;
   color: #333;
   margin-bottom: 10px;
+  font-weight: 400;
 }
 
 .news-card .home-score {
