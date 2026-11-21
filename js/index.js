@@ -213,6 +213,7 @@ export async function loadGameNews() {
               <div class="news-card-details">
                   ${playerGoals}
               </div>
+              <span class="news-expand-indicator" aria-hidden="true">▾</span>
           ` : ""}
 
         </div>
