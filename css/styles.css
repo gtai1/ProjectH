@@ -195,8 +195,8 @@ nav ul li a.active {
 .news-card .home-team-info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .news-card .home-team-info img {
