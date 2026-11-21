@@ -1065,6 +1065,11 @@ footer {
   font-weight: bold;
 }
 
+.game-page-card .game-header .game-date {
+    text-align: center;
+    width: 100%;
+}
+
 .game-note {
   margin-bottom: 0;
 }
