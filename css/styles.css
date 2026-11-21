@@ -221,6 +221,30 @@ nav ul li a.active {
   border-top: 1px solid #ddd;
 }
 
+.news-expand-indicator {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    cursor: pointer;
+  }
+
+  .news-expand-indicator {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: #666;
+    transition: transform 0.25s ease;
+  }
+
+  .news-card.expanded .news-expand-indicator {
+    transform: rotate(180deg);
+  }
+}
+
 /* Compact player stats in homepage game cards */
 .news-card .news-scorers {
   display: grid;
