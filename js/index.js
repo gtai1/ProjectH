@@ -178,6 +178,20 @@ export async function loadGameNews() {
 
       const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : game.awayScore < game.homeScore ? " is-loser" : "";
       const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : game.homeScore < game.awayScore ? " is-loser" : "";
+
+      const playerGoals = (awayScorers || homeScorers) ? `
+          <div class="news-scorers">
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label${awayWinnerClass}">${game.alternateAwayName ? game.alternateAwayName.toUpperCase() : 'TEAM AWAY'}</span>
+                  <div class="news-scorer-list">${awayScorers}</div>
+              </div>
+
+              <div class="news-scorer-team">
+                  <span class="news-scorer-label${homeWinnerClass}">${game.alternateHomeName ? game.alternateHomeName.toUpperCase() : 'TEAM HOME'}</span>
+                  <div class="news-scorer-list">${homeScorers}</div>
+              </div>
+          </div>
+      ` : "";
       
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
