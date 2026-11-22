@@ -272,6 +272,17 @@ nav ul li a.active {
   color: #666;
 }
 
+/* Fade the losing team's scorer heading */
+.news-card .news-scorer-team.is-loser .news-scorer-label {
+    opacity: 0.4;
+}
+
+/* Emphasize the winning team's scorer heading */
+.news-card .news-scorer-team.is-winner .news-scorer-label {
+    font-weight: 700;
+    color: #333;
+}
+
 .news-card .news-scorer-list {
   display: flex;
   flex-direction: column;
