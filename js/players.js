@@ -423,8 +423,9 @@ export async function loadPlayerPage() {
       const playerTeam = stats.team === "home" ? homeTeam : awayTeam;
       const points = (stats.goals ?? 0) + (stats.assists ?? 0);
 
-      const gameCard = document.createElement("article");
+      const gameCard = document.createElement("a");
       gameCard.classList.add("player-game-card");
+      gameCard.href = `../games/game.html?game=${game.date}`;
 
       const gameHeader = document.createElement("div");
       gameHeader.classList.add("player-game-header");
