@@ -53,6 +53,41 @@ function buildScoutingReport(scouting) {
   `;
 }
 
+function buildRelativePositionStats(player, playerStats) {
+  const currentStats = playerStats.get(player.name);
+  const metrics = [
+    ["Goals", "goals"],
+    ["Assists", "assists"],
+    ["Points", "points"],
+  ];
+
+  const rankings = metrics
+    .map(([label, metric]) => {
+      const rank =
+        1 +
+        [...playerStats.values()].filter(
+          (stats) => stats[metric] > currentStats[metric],
+        ).length;
+
+      return `
+        <div class="scouting-rating">
+          <div class="scouting-rating-label">
+            <span>${label}</span>
+            <span>#${rank} (${currentStats[metric]})</span>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="scouting-section">
+      <h5>Season Rankings</h5>
+      ${rankings}
+    </section>
+  `;
+}
+
 export async function loadPlayers() {
   try {
     // Load both JSON files
@@ -63,6 +98,24 @@ export async function loadPlayers() {
 
     const players = await playersResponse.json();
     const games = await gamesResponse.json();
+
+    const playerStats = new Map(
+      players.map((player) => [
+        player.name,
+        { goals: 0, assists: 0, points: 0 },
+      ]),
+    );
+
+    games.forEach((game) => {
+      game.players.forEach((gamePlayer) => {
+        const stats = playerStats.get(gamePlayer.name);
+        if (!stats) return;
+
+        stats.goals += gamePlayer.goals ?? 0;
+        stats.assists += gamePlayer.assists ?? 0;
+        stats.points = stats.goals + stats.assists;
+      });
+    });
 
     const playersGrid = document.getElementById("players-grid");
 
@@ -79,22 +132,7 @@ export async function loadPlayers() {
       // Total games played
       const gamesPlayed = playerGames.length;
 
-      // Total goals
-      const goals = playerGames.reduce((total, game) => {
-        const gamePlayer = game.players.find((p) => p.name === player.name);
-
-        return total + (gamePlayer ? gamePlayer.goals : 0);
-      }, 0);
-
-      // Total assists
-      const assists = playerGames.reduce((total, game) => {
-        const gamePlayer = game.players.find((p) => p.name === player.name);
-
-        return total + (gamePlayer ? gamePlayer.assists : 0);
-      }, 0);
-
-      // Total points
-      const points = goals + assists;
+      const { goals, assists, points } = playerStats.get(player.name);
 
       // Create player card
       const playerLink = document.createElement("a");
@@ -224,6 +262,7 @@ export async function loadPlayers() {
                         <div class="player-position">${player.position} | Shoots ${player.handedness} </div>
                     </div>
 
+                    ${buildRelativePositionStats(player, playerStats)}
                     ${buildScoutingReport(player.scouting)}
 
                   </div>
