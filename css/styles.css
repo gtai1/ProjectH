@@ -736,6 +736,7 @@ footer {
 }
 
 .player-image {
+  position: relative;
   height: 220px;
   background-color: #0d1b2a;
 
@@ -756,6 +757,18 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.player-image .player-card-flip-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .player-info {

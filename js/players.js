@@ -178,6 +178,7 @@ export async function loadPlayers() {
 
                     <div class="player-image">
                         <img src="${imagePath}" alt="${player.name} #${player.number}">
+                        <img class="player-card-flip-icon" src="../icons/rotate-left.png" alt="" aria-hidden="true">
                     </div>
     
                     <div class="player-info">
