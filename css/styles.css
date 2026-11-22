@@ -843,6 +843,12 @@ footer {
   margin-bottom: 30px;
 }
 
+/* Right-align numerical stats */
+.stats-table th:not(:first-child),
+.stats-table td:not(:first-child) {
+    text-align: right;
+}
+
 .stats-table th {
   background-color: #0d1b2a;
   color: #fff;
