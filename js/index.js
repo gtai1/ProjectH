@@ -162,17 +162,15 @@ export async function loadGameNews() {
       
       const playerGoals = (awayScorers || homeScorers) ? `
           <div class="news-scorers">
-              <div class="news-scorer-team">
+              <div class="news-scorer-team${awayWinnerClass}">
                   <span class="news-scorer-label">${game.alternateAwayName ? game.alternateAwayName.toUpperCase() : 'TEAM AWAY'}</span>
                   <div class="news-scorer-list">${awayScorers}</div>
               </div>
 
-              <div class="news-scorer-team">
+              <div class="news-scorer-team${homeWinnerClass}">
                   <span class="news-scorer-label">${game.alternateHomeName ? game.alternateHomeName.toUpperCase() : 'TEAM HOME'}</span>
                   <div class="news-scorer-list">${homeScorers}</div>
               </div>
-      
- 
           </div>
       ` : "";
 
