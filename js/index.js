@@ -141,6 +141,9 @@ export async function loadGameNews() {
 
       const scorers = game.players.sort((a, b) =>(b.goals + b.assists) - (a.goals + a.assists) || b.goals - a.goals);
       
+      const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : game.awayScore < game.homeScore ? " is-loser" : "";
+      const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : game.homeScore < game.awayScore ? " is-loser" : "";
+      
       const formatPlayer = (player) => `
           <span class="news-player-stat">
               <div>
@@ -174,9 +177,6 @@ export async function loadGameNews() {
           </div>
       ` : "";
 
-      const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : game.awayScore < game.homeScore ? " is-loser" : "";
-      const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : game.homeScore < game.awayScore ? " is-loser" : "";
-      
       const newsCard = document.createElement("article");
       newsCard.classList.add("news-card");
 
