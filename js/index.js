@@ -139,7 +139,7 @@ export async function loadGameNews() {
         year: "numeric",
       });
 
-      const scorers = game.players.sort((a, b) => b.goals - a.goals || b.assists - a.assists);
+      const scorers = game.players.sort((a, b) =>(b.goals + b.assists) - (a.goals + a.assists) || b.goals - a.goals);
       
       const formatPlayer = (player) => `
           <span class="news-player-stat">
