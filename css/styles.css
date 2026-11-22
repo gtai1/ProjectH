@@ -269,7 +269,15 @@ nav ul li a.active {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.8px;
-  color: #666;
+  color: #333;
+}
+
+.news-card .news-scorer-label.is-winner {
+  color: #0d1b2a;
+}
+
+.news-card .news-scorer-label.is-loser {
+  opacity: 0.4;
 }
 
 .news-card .news-scorer-list {
