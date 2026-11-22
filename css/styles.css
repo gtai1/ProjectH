@@ -329,6 +329,12 @@ table {
   text-align: left;
 }
 
+/* Right-align numerical columns in sidebar */
+.sidebar table th:not(:first-child),
+.sidebar table td:not(:first-child) {
+    text-align: right;
+}
+
 th,
 td {
   padding: 10px;
