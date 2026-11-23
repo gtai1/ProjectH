@@ -240,7 +240,7 @@ export async function loadGamePage() {
 
       game.players
         .filter((player) => player.team === side)
-        .sort((a, b) => b.goals - a.goals || b.assists - a.assists)
+        .sort((a, b) =>(b.goals + b.assists) - (a.goals + a.assists) || b.goals - a.goals);
         .forEach((player) => {
           const playerStat = document.createElement("span");
           playerStat.classList.add("score-player-stat");
