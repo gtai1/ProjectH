@@ -72,7 +72,7 @@ export async function loadGames() {
       scoreCard.innerHTML = `
         <div class="game-header">
 
-          <div class="game-date">${game.date}</div>
+          <div class="game-date">${formattedDate}</div>
 
           <div class="score">
             <div class="team-away">
