@@ -72,13 +72,16 @@ export async function loadGames() {
         `
         : "";
 
+      const awayWinnerClass = game.awayScore > game.homeScore ? " is-winner" : game.awayScore < game.homeScore ? " is-loser" : "";
+      const homeWinnerClass = game.homeScore > game.awayScore ? " is-winner" : game.homeScore < game.awayScore ? " is-loser" : "";
+      
       scoreCard.innerHTML = `
         <div class="game-header">
 
           <div class="game-date">${formattedDate}</div>
 
           <div class="score">
-            <div class="team-away">
+            <div class="team-away${awayWinnerClass}">
               <span class="team-name">${game.alternateAwayName ? game.alternateAwayName : 'Team Away'}</span>
               <img src="../icons/${game.alternateAwayColour ? game.alternateAwayColour : 'white'}-jersey.png" alt="Away jersey" width="25" height="25">
               <span class="team-score">${game.awayScore}</span>
@@ -86,7 +89,7 @@ export async function loadGames() {
 
             <span class="vs">@</span>
 
-            <div class="team-home">
+            <div class="team-home${homeWinnerClass}">
               <span class="team-score">${game.homeScore}</span>
               <img src="../icons/${game.alternateHomeColour ? game.alternateHomeColour : 'black'}-jersey.png" alt="Home jersey" width="25" height="25">
               <span class="team-name">${game.alternateHomeName ? game.alternateHomeName : 'Team Home'}</span>
