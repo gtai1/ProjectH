@@ -1177,10 +1177,7 @@ footer {
 
 /* Divider between the score/notes and player statistics */
 .score-card .score-details {
-  display: block;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #ddd;
+   display: none;
 }
 
 /* Two columns: Team White and Team Black */
@@ -1256,4 +1253,7 @@ footer {
 
 .game-page-card .score-details {
   display: block;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
 }
