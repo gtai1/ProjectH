@@ -1260,16 +1260,27 @@ footer {
   }
 
   .score {
-    gap: 12px;
+    gap: 10px;
   }
 
   .team-home,
   .team-away {
+    flex: 1 1 0;
+    min-width: 0;
     gap: 8px;
   }
 
+  .team-home {
+    justify-content: flex-end;
+  }
+
+  .team-away {
+    justify-content: flex-start;
+  }
+
+  .team-home .team-name,
   .team-away .team-name {
-    text-align: right;
+    text-align: left;
   }
 
   .team-score {
