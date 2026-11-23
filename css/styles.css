@@ -421,10 +421,6 @@ footer {
   #news {
     scroll-margin-top: 120px;
   }
-
-  .team-away {
-    justify-content: flex-end;
-  }
 }
 
 @media (max-width: 500px) {
