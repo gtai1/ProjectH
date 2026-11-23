@@ -237,15 +237,6 @@ export async function loadGamePage() {
 
       const scorerList = document.createElement("div");
       scorerList.classList.add("score-scorer-list");
-
-      const formatPlayer = (player) => `
-          <span class="news-player-stat">
-              <div>
-                ${player.position === 'forward' ? '<img src="./icons/letter-f.png" alt="f" title="Forward" width="10" height="10" />' : player.position === 'defense' ? '<img src="./icons/letter-d.png" alt="d" title="Defense" width="10" height="10" />' : player.position === 'goalie' ? '<img src="./icons/letter-g.png" alt="g" title="Goalie" width="10" height="10" />' : ''} <strong>${player.name}</strong>
-              </div>
-              <span>${player.goals}G · ${player.assists}A · ${player.goals + player.assists}P</span>
-          </span>
-      `;
       
       game.players
         .filter((player) => player.team === side)
@@ -254,6 +245,15 @@ export async function loadGamePage() {
           const playerStat = document.createElement("span");
           playerStat.classList.add("score-player-stat");
 
+          const formatPlayer = (player) => `
+              <span class="news-player-stat">
+                  <div>
+                    ${player.position === 'forward' ? '<img src="./icons/letter-f.png" alt="f" title="Forward" width="10" height="10" />' : player.position === 'defense' ? '<img src="./icons/letter-d.png" alt="d" title="Defense" width="10" height="10" />' : player.position === 'goalie' ? '<img src="./icons/letter-g.png" alt="g" title="Goalie" width="10" height="10" />' : ''} <strong>${player.name}</strong>
+                  </div>
+                  <span>${player.goals}G · ${player.assists}A · ${player.goals + player.assists}P</span>
+              </span>
+          `;
+          
           const playerName = document.createElement("div");
           const strongName = document.createElement("strong");
           strongName.textContent = player.name;
