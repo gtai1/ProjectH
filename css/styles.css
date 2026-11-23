@@ -930,6 +930,12 @@ footer {
   flex: 1;
 }
 
+/* Fade losing team */
+.score-card .team-away.is-loser,
+.score-card .team-home.is-loser {
+    opacity: 0.4;
+}
+
 @media (max-width: 1060px) {
   .scores-container {
     padding: 15px;
