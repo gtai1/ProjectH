@@ -1249,19 +1249,6 @@ footer {
     font-weight: bold;
   }
 
-  .score-card {
-    cursor: pointer;
-  }
-
-  /* Hide player statistics until a card is tapped */
-  .score-card .score-details {
-    display: none;
-  }
-
-  .score-card.expanded .score-details {
-    display: block;
-  }
-
   .score-card .score-scorers {
     gap: 12px;
   }
