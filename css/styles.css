@@ -1148,7 +1148,6 @@ footer {
   flex-direction: row;
   align-items: center;
   gap: 15px;
-  justify-content: flex-end;
 }
 
 .team-away {
@@ -1156,7 +1155,6 @@ footer {
   flex-direction: row;
   align-items: center;
   gap: 15px;
-  justify-content: flex-start;
 }
 
 .team-name {
