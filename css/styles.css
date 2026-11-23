@@ -1140,13 +1140,17 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  width: 100%;
+  gap: 16px;
 }
 
 .team-home {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
   gap: 15px;
 }
 
@@ -1154,7 +1158,14 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 0;
+  min-width: 0;
   gap: 15px;
+}
+
+.team-away .team-name {
+  text-align: right;
 }
 
 .team-name {
@@ -1165,6 +1176,8 @@ footer {
 .team-score {
   font-size: 32px;
   font-weight: bold;
+  min-width: 1.4ch;
+  text-align: center;
 }
 
 .vs {
