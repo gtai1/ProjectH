@@ -97,13 +97,6 @@ export async function loadGames() {
         </div>
       `;
 
-      // Expand player stats when tapped on mobile
-      scoreCard.addEventListener("click", () => {
-        if (window.matchMedia("(max-width: 768px)").matches) {
-          scoreCard.classList.toggle("expanded");
-        }
-      });
-
       scoresData.prepend(scoreCard);
     });
   } catch (error) {
