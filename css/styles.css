@@ -1271,16 +1271,15 @@ footer {
   }
 
   .team-home {
-    justify-content: flex-end;
-  }
-
-  .team-away {
     justify-content: flex-start;
   }
 
-  .team-home .team-name,
+  .team-away {
+    justify-content: flex-end;
+  }
+
   .team-away .team-name {
-    text-align: left;
+    text-align: right;
   }
 
   .team-score {
