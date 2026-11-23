@@ -25,13 +25,7 @@ export async function loadGames() {
       scoreCard.classList.add("score-card");
       scoreCard.href = `./game.html?game=${game.date}`;
 
-      // Sort players by goals, then assists
-      const scorers = game.players
-        // .filter((player) => player.goals > 0 || player.assists > 0)
-        .sort(
-          (a, b) =>
-            b.goals - a.goals || b.assists - a.assists
-        );
+      const scorers = game.players.sort((a, b) =>(b.goals + b.assists) - (a.goals + a.assists) || b.goals - a.goals);
 
       // Format each player's statistics
       const formatPlayer = (player) => `
