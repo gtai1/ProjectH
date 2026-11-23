@@ -1259,37 +1259,23 @@ footer {
     gap: 12px;
   }
 
-  /* Add the score alignment rules here */
   .score {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto minmax(0, 1fr);
-    align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 
-  .team-home {
-    justify-content: flex-start;
-    gap: 8px;
-    min-width: 0;
-  }
-
-  .team-home .team-name {
-    text-align: left;
-  }
-
+  .team-home,
   .team-away {
-    justify-content: flex-end;
     gap: 8px;
-    min-width: 0;
   }
 
   .team-away .team-name {
     text-align: right;
-    order: -1;
   }
 
   .team-score {
     font-size: 1.5rem;
+    min-width: 1.4ch;
+    text-align: center;
   }
 
   .vs {
