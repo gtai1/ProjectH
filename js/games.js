@@ -12,6 +12,15 @@ export async function loadGames() {
     scoresData.innerHTML = "";
 
     games.forEach((game) => {
+
+      const date = new Date(`${game.date}T00:00:00`);
+
+      const formattedDate = date.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+      
       const scoreCard = document.createElement("a");
       scoreCard.classList.add("score-card");
       scoreCard.href = `./game.html?game=${game.date}`;
